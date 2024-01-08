@@ -6,7 +6,7 @@ import { Button, Form, Icon, Box, Progress, Columns, Card } from "react-bulma-co
 import Letter from './letter.svg';
 
 function ProgressBar() {
-  const [valueProgress, setValueProgress] = useState(5);
+  const [valueProgress, setValueProgress] = useState(60);
   const colorProgress = 
     valueProgress > 10 && valueProgress < 80
     ? "is-warning"
@@ -57,9 +57,30 @@ function RenderProgress() {
 }
 
 function RenderIdeaInput() {
+  const [ideaValue, setIdeaValue] = useState("");
+  const placeholderIdea = ideaValue === "" ? "" : "Опиши свою идею";
   return (
-    <input placeholder="Опиши свою идею">
-    </input>
+    <div>
+      <span>
+        {placeholderIdea}
+      </span>
+      <Columns>
+        <Columns.Column>
+          <input 
+            class="input is-black" 
+            placeholder={"Опиши свою идею"}
+            size={9} 
+            value={ideaValue} 
+            onChange={(e) => setIdeaValue(e.target.value)}>
+          </input>
+        </Columns.Column>
+        <Columns.Column size={3}>
+          <Button color="info"  className="buttonNoLeftRadius">
+            Оценить
+          </Button>
+        </Columns.Column>
+      </Columns>
+    </div>
   );
 }
 
@@ -68,6 +89,7 @@ function App() {
   return (
     <Box>
       {RenderProgress()}
+      {RenderIdeaInput()}
     </Box>
   );
 }
