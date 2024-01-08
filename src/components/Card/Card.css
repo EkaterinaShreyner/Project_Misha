@@ -1,0 +1,9 @@
+.centerContentResponsive {
+  display: flex;
+  justify-content: center;
+}
+
+.spaceBetweenContent {
+  display: flex;
+  justify-content: space-between;
+}

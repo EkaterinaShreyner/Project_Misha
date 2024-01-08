@@ -1,0 +1,8 @@
+.noLeftBottomRadius {
+  border-bottom-left-radius: 0 !important;
+}
+
+.centerContentResponsive {
+  display: flex;
+  justify-content: center;
+}
