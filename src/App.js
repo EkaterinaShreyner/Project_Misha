@@ -30,40 +30,45 @@ function ProgressBar() {
 
 function RenderProgress() {
   return (
-    <Box>
-      <Columns>
-        <Columns.Column>
-            <p>
-              ВЕРОЯТНОСТЬ УСПЕХА
-            </p>
-          {ProgressBar()}
-        </Columns.Column>
-        <Columns.Column>
-          <Card className="card">
-            <p>
-              Но вообще-то вряд ли получится потому что…
-            </p>
-            <p>
-              Узнать наиболее вероятные проблемы, которые у тебя возникнут по мнению нашего ИИ
-            </p>
-            <div className="centerContentResponsive">
-              <Button color="black" className="buttonNoLeftRadius">
-                Узнать  
-              </Button>
-            </div>
-          </Card>
-        </Columns.Column>
-      </Columns>
-      
-    </Box>
+    <Columns>
+      <Columns.Column>
+          <p>
+            ВЕРОЯТНОСТЬ УСПЕХА
+          </p>
+        {ProgressBar()}
+      </Columns.Column>
+      <Columns.Column>
+        <Card className="card">
+          <p>
+            Но вообще-то вряд ли получится потому что…
+          </p>
+          <p>
+            Узнать наиболее вероятные проблемы, которые у тебя возникнут по мнению нашего ИИ
+          </p>
+          <div className="centerContentResponsive">
+            <Button color="black" className="buttonNoLeftRadius">
+              Узнать  
+            </Button>
+          </div>
+        </Card>
+      </Columns.Column>
+    </Columns>
   );
 }
 
+function RenderIdeaInput() {
+  return (
+    <input placeholder="Опиши свою идею">
+    </input>
+  );
+}
+
+
 function App() {
   return (
-    <div>
+    <Box>
       {RenderProgress()}
-    </div>
+    </Box>
   );
 }
 
