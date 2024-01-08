@@ -2,44 +2,68 @@ import "./App.css";
 import React from "react";
 import "bulma/css/bulma.min.css";
 import { useState } from "react";
-import { Button, Form, Icon, Box } from "react-bulma-components";
+import { Button, Form, Icon, Box, Progress, Columns, Card } from "react-bulma-components";
 import Letter from './letter.svg';
-// const { Input, Field, Control, Label } = Form;
+
+function ProgressBar() {
+  const [valueProgress, setValueProgress] = useState(5);
+  const colorProgress = 
+    valueProgress > 10 && valueProgress < 80
+    ? "is-warning"
+    : valueProgress < 10
+    ? "is-danger"
+    : "is-success";
+
+  return (
+    <div>
+      <span>
+        {valueProgress}%
+      </span>
+      <Progress
+        class={`progress ${colorProgress}`}
+        max={100}
+        value={valueProgress}/>
+    </div>
+    
+  );
+}
+
+function RenderProgress() {
+  return (
+    <Box>
+      <Columns>
+        <Columns.Column>
+            <p>
+              ВЕРОЯТНОСТЬ УСПЕХА
+            </p>
+          {ProgressBar()}
+        </Columns.Column>
+        <Columns.Column>
+          <Card className="card">
+            <p>
+              Но вообще-то вряд ли получится потому что…
+            </p>
+            <p>
+              Узнать наиболее вероятные проблемы, которые у тебя возникнут по мнению нашего ИИ
+            </p>
+            <div className="centerContentResponsive">
+              <Button color="black" className="buttonNoLeftRadius">
+                Узнать  
+              </Button>
+            </div>
+          </Card>
+        </Columns.Column>
+      </Columns>
+      
+    </Box>
+  );
+}
 
 function App() {
-  const [isValue, setIsValue] = useState("");
   return (
-    <Box className="App">
-      <Button className="test button is-warning is-light">
-        My Bulma button
-      </Button>
-      <Form.Field>
-        <Form.Label>Username</Form.Label>
-        <Form.Control>
-          <Form.Input
-            class="success input is-rounded"
-            placeholder="введите текст"
-            value={isValue}
-            onChange={(e) => setIsValue(e.target.value)}
-          />
-          <Icon align="left">
-            <i className="fas fa-info-circle"></i>
-          </Icon>
-          <Icon
-            align="right"
-            color="info"
-            size="large"
-            // style={{
-            //   border: '1px solid red'
-            // }}
-            className="image"
-          >
-            <i className="fas fa-home fa-2x" />
-          </Icon>
-        </Form.Control>
-        {isValue === "123" && <Form.Help color="danger">This username is available: {isValue}</Form.Help>}
-      </Form.Field>
-    </Box>
+    <div>
+      {RenderProgress()}
+    </div>
   );
 }
 

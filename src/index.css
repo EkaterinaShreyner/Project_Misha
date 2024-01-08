@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.buttonNoLeftRadius {
+  border-bottom-left-radius: 0 !important;
+}
+
+.centerContentResponsive {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  padding: 10px;
+}
