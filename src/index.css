@@ -12,7 +12,7 @@ code {
     monospace;
 }
 
-.buttonNoLeftRadius {
+.noLeftBottomRadius {
   border-bottom-left-radius: 0 !important;
 }
 
@@ -23,4 +23,9 @@ code {
 
 .card {
   padding: 10px;
+}
+
+.spaceBetweenContent {
+  display: flex;
+  justify-content: space-between;
 }
