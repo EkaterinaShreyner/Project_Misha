@@ -1,5 +1,6 @@
 @font-face {
-  font-family: "Manrope", "Arial", sans-serif;
+  /* font-family: "Manrope", "Arial", sans-serif; */
+  font-family: "Manrope";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -8,7 +9,8 @@
 }
 
 @font-face {
-  font-family: "Manrope", "Arial", sans-serif;
+  /* font-family: "Manrope", "Arial", sans-serif; */
+  font-family: "Manrope";
   font-style: normal;
   font-weight: 500;
   font-display: swap;

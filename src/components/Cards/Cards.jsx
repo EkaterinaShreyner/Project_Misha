@@ -2,6 +2,11 @@ import React from "react";
 import { useState } from "react";
 import RenderCard from "../Card/Card";
 import { Button, Columns } from "react-bulma-components";
+import Img1 from '../../images/Vector.svg'
+import Img2 from '../../images/Vector (2).svg'
+import Img3 from '../../images/Vector (4).svg'
+import Img4 from '../../images/Vector (5).svg'
+import Img5 from '../../images/Vector (6).svg'
 
 import './Cards.css'
 
@@ -30,12 +35,19 @@ function RenderCards() {
     "4599"
   ];
 
+  const ImageCards = [
+    Img1,
+    Img2,
+    Img3,
+    Img4,
+    Img5,
+  ];
+
   const renderedCards = promoText.map((text, index) => (
     <Columns.Column key={index} size={2}>
-      {RenderCard(text, crossedPrices[index], actualPrices[index])}
+      {RenderCard(text, crossedPrices[index], actualPrices[index], ImageCards[index])}
     </Columns.Column>
   ));
-
   return (
     <div>
       <span>

@@ -3,20 +3,21 @@ import {Card } from "react-bulma-components";
 
 import './Card.css'
 
-function RenderCard(text, crossedPrices, actualPrices) {
+function RenderCard(text, crossedPrices, actualPrices, ImageCards) {
   return (
-    <Card className = "noLeftBottomRadius">
-      <p>
-        {text}
-      </p>
-      <div className="spaceBetweenContent">
-        <s>
-          {crossedPrices}
-        </s>
-        <span>
-          {actualPrices}
-        </span>
-      </div>
+    <Card className="card-promo">
+        <h2 className="card-promo__title">
+          {text}
+        </h2>
+        <div className="card-promo__price">
+          <s className="card-promo__price-previous">
+            {crossedPrices}
+          </s>
+          <span className="card-promo__price-actual">
+            {actualPrices}
+          </span>
+        </div>
+        <img className="card-promo__image" src={ImageCards} alt="картинка"/>
     </Card>
   );
 }

@@ -3,7 +3,71 @@
   justify-content: center;
 }
 
-.spaceBetweenContent {
+/* .spaceBetweenContent {
   display: flex;
   justify-content: space-between;
+} */
+
+.card-promo {
+  display: flex;
+  flex-direction: column;
+  width: 236px !important;
+  height: 400px;
+  box-sizing: border-box;
+  /* border-bottom-left-radius: 0; */
+  border-radius: 16px 16px 16px 0px;
+  background-color: #2F2F37;
+  padding: 20px 16px 24px;
+  justify-content: space-between;
+}
+
+/* .card-promo__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+} */
+
+.card-promo__title {
+  color: #F7F7F8;
+  font-family: Manrope;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 105%;
+  width: 100%;
+}
+
+.card-promo__price {
+  display: flex;
+  gap: 4px;
+  align-items: baseline;
+  justify-content: end;
+  z-index: 1;
+}
+
+.card-promo__price-previous {
+  color: #70869D;
+  font-family: Manrope;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -1.2px;
+}
+
+.card-promo__price-actual {
+  color: #3E6CFF;
+  font-family: Manrope;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -2px;
+}
+
+.card-promo__image {
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  z-index: 0;
 }
