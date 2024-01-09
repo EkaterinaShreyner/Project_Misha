@@ -1,7 +1,7 @@
-import "./App.css";
 import React from "react";
 import { Routes, Route } from 'react-router-dom';
 import "bulma/css/bulma.min.css";
+import "./App.css";
 import { Box } from "react-bulma-components";
 
 import Header from "../Header/Header";
@@ -16,20 +16,21 @@ function App() {
       <Route
         path='/'
         element={
-          <Box>
-            {Header()}
-            {Main()}
-            {/* {RenderIdeaInput()} */}
-          </Box>
+          // <Box>
+          <>
+            <Header/>
+            <Main/>
+          </>
+          // </Box>
         }
       ></Route>
       <Route
         path='/other-ideas'
         element={
-          <Box>
-            {Header()}
-            {Ideas()}
-          </Box>
+          <>
+            <Header/>
+            <Ideas/>
+          </>
         }
       ></Route>
       <Route
@@ -44,14 +45,13 @@ function App() {
       <Route
         path='/promo'
         element={
-          <Box>
-            {Header()}
-            {RenderCards()}
-          </Box>
+          <>
+            <Header/>
+            <RenderCards/>
+          </>
         }
       ></Route>
     </Routes>
-    
   );
 }
 

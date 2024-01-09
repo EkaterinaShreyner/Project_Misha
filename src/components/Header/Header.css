@@ -1,6 +1,11 @@
+.header {
+  margin: 40px 90px 0;
+}
+
 .header__nav {
   display: flex;
   justify-content: space-between;
+  
 }
 
 .header__nav-list {

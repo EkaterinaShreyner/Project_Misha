@@ -7,6 +7,7 @@ function Header() {
   const location = useLocation();
   const currentPath = location.pathname;
   return (
+    <header className="header">
       <nav className="header__nav">
         <ul className="header__nav-list">
           <li>
@@ -18,6 +19,7 @@ function Header() {
         </ul>
         {currentPath !== '/' && <Link to="/" className="header__nav-item">Вернуться к началу</Link> }
       </nav>
+    </header>
   )
 }
 
