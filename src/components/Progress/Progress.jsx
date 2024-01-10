@@ -12,7 +12,7 @@ function RenderProgress() {
   useEffect(() => {
     const randomNumber = Math.floor(Math.random() * 100) + 1;
     setChance(randomNumber)
-  });
+  }, []);
 
   // function generateRandomNumber() {
   //   const randomNumber = Math.floor(Math.random() * 100) + 1;
