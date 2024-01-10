@@ -12,3 +12,15 @@
   display: flex;
   gap: 28px;
 }
+
+.header__nav-item {
+  color: rgba(47, 47, 55, 0.35);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.header__nav-item_active {
+  color: #2F2F37;
+}

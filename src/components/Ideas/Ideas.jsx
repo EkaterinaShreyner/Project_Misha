@@ -1,25 +1,25 @@
-import React from 'react'
-
-import { Button, Box  } from "react-bulma-components";
+import React from 'react';
+import './Ideas.css';
+import CardIdeaList from '../CardIdeaList/CardIdeaList';
 
 function Ideas() {
   return (
-    <div>
-      <div>Создание платформы для персонализированных образовательных путеводителей. Пользователи могут вводить свои интересы, уровень знаний и цели, а система, используя искусственный интеллект, предоставляет индивидуализированный план обучения с рекомендациями курсов, проектов и ресурсов.
+    <div className="ideas">
+      <p className="ideas__title">Создание платформы для персонализированных образовательных путеводителей. Пользователи могут вводить свои интересы, уровень знаний и цели, а система, используя искусственный интеллект, предоставляет индивидуализированный план обучения с рекомендациями курсов, проектов и ресурсов.
+      </p>
+      <div className="ideas__buttons">
+        <button
+          className="ideas__button_type ideas__button_type_like"
+          onClick={() => console.log('like')}
+        >  
+        </button>
+        <button
+          className="ideas__button_type ideas__button_type_dislike"
+          onClick={() => console.log('dislike')}
+        >  
+        </button>
       </div>
-      <Box>
-        <Button
-          // color="is-info is-light"
-          renderAs="span"
-          className="noLeftBottomRadius button is-info is-light">
-            dislike
-        </Button>
-        <Button
-          color="info"
-          className="noLeftBottomRadius button is-info is-light">
-            like
-        </Button>
-      </Box>  
+      <CardIdeaList />
     </div>
   )
 }

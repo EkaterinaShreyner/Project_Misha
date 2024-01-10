@@ -1,11 +1,10 @@
 import React from "react";
-import {Card } from "react-bulma-components";
 
-import './Card.css'
+import './CardPromo.css'
 
-function RenderCard(text, crossedPrices, actualPrices, ImageCards) {
+function CardPromo(text, crossedPrices, actualPrices, ImageCards) {
   return (
-    <Card className="card-promo">
+    <div className="card-promo">
         <h2 className="card-promo__title">
           {text}
         </h2>
@@ -18,8 +17,8 @@ function RenderCard(text, crossedPrices, actualPrices, ImageCards) {
           </span>
         </div>
         <img className="card-promo__image" src={ImageCards} alt="картинка"/>
-    </Card>
+    </div>
   );
 }
 
-export default RenderCard;
+export default CardPromo;

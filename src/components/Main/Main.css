@@ -1,9 +1,14 @@
+.main {
+  margin: 67px 90px 0;
+}
+
 .main__title {
   width: 600px;
   font-family: Manrope;
   color: #2F2F37 ;
   font-size: 48px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 110%;
+  margin-bottom: 80px;
 }

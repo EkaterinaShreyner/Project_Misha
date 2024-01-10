@@ -6,7 +6,7 @@ import { Box } from "react-bulma-components";
 
 import Header from "../Header/Header";
 import RenderProgress from "../Progress/Progress";
-import RenderCards from "../Cards/Cards";
+import CardsPromoList from "../CardsPromoList/CardsPromoList";
 import Main from "../Main/Main";
 import Ideas from "../Ideas/Ideas";
 
@@ -16,12 +16,10 @@ function App() {
       <Route
         path='/'
         element={
-          // <Box>
           <>
             <Header/>
             <Main/>
           </>
-          // </Box>
         }
       ></Route>
       <Route
@@ -47,7 +45,7 @@ function App() {
         element={
           <>
             <Header/>
-            <RenderCards/>
+            <CardsPromoList/>
           </>
         }
       ></Route>

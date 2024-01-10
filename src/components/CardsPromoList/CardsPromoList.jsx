@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import RenderCard from "../Card/Card";
+import CardPromo from "../CardPromo/CardPromo";
 import { Button, Columns } from "react-bulma-components";
 import Img1 from '../../images/Vector.svg'
 import Img2 from '../../images/Vector (2).svg'
@@ -8,9 +8,9 @@ import Img3 from '../../images/Vector (4).svg'
 import Img4 from '../../images/Vector (5).svg'
 import Img5 from '../../images/Vector (6).svg'
 
-import './Cards.css'
+import './CardsPromoList.css'
 
-function RenderCards() {
+function CardsPromoList() {
   const [emailValue, setEmailValue] = useState("");
   const emailPlaceholder = emailValue === "" ? "" : "Напиши свою почту, а мы пришлем результаты обработки твоей идеи нашим ИИ:";
   const promoText = [
@@ -45,17 +45,17 @@ function RenderCards() {
 
   const renderedCards = promoText.map((text, index) => (
     <Columns.Column key={index} size={2}>
-      {RenderCard(text, crossedPrices[index], actualPrices[index], ImageCards[index])}
+      {CardPromo(text, crossedPrices[index], actualPrices[index], ImageCards[index])}
     </Columns.Column>
   ));
   return (
-    <div>
-      <span>
+    <div className="promo">
+      <p className="promo__title">
         Выбери промокод на какой из наших продуктов тебе прислать:
-      </span>
-      <Columns>
+      </p>
+      <div className="promo__cards-list">
         {renderedCards}
-      </Columns>
+      </div>
       <Columns>
         <p>
           {emailPlaceholder}
@@ -79,4 +79,4 @@ function RenderCards() {
   );
 }
 
-export default RenderCards;
+export default CardsPromoList;

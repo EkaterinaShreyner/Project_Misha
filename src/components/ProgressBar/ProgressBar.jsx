@@ -2,9 +2,8 @@ import React from "react";
 import { useState } from "react";
 import { Progress } from "react-bulma-components";
 
-
-function ProgressBar() {
-  const [valueProgress, setValueProgress] = useState(60);
+function ProgressBar(chance) {
+  const [valueProgress, setValueProgress] = useState(chance);
   const colorProgress = 
     valueProgress > 10 && valueProgress < 80
     ? "is-warning"
@@ -15,14 +14,13 @@ function ProgressBar() {
   return (
     <div>
       <span>
-        {valueProgress}%
+        {chance}%
       </span>
       <Progress
         className={`progress ${colorProgress}`}
         max={100}
         value={valueProgress}/>
-    </div>
-    
+    </div> 
   );
 }
 
