@@ -38,3 +38,8 @@ code {
   display: flex;
   justify-content: space-between;
 } */
+
+.cardModal {
+  border-color: red;
+  height: 720px;
+}

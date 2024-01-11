@@ -1,21 +1,48 @@
 import React from "react";
 import { useState,  } from "react";
 import { useNavigate } from 'react-router-dom';
-import { Button, Columns } from "react-bulma-components";
-
+import { Button, Columns, Modal } from "react-bulma-components";
 import './IdeaInput.css'
+import RenderProgress from "../Progress/Progress"
 
 function RenderIdeaInput() {
   const [ideaValue, setIdeaValue] = useState("");
+  const [isShowModal, setShowModal] = useState(false)
   const navigate = useNavigate();
 
   function handleCheckIdea(e) {
     e.preventDefault();
-    navigate('./progress-bar', { replace: true })
+    setShowModal(true);
+    console.log("isShowModal:", isShowModal)
+    // navigate('./progress-bar', { replace: true })
   }
+
+  function RenderModalProgress() {
+    return (
+      <Modal 
+        show={isShowModal} 
+        onClose={() => setShowModal(false)} 
+        closeOnEsc="true"
+        closeOnBlur="true"
+        className="cardModal">
+        <Modal.Card>
+          <Modal.Card.Header>
+            <Modal.Card.Title textColor="success">
+              Оценка вашей идеи
+            </Modal.Card.Title>
+          </Modal.Card.Header>
+          <Modal.Card.Body>
+            {RenderProgress()}
+          </Modal.Card.Body>
+        </Modal.Card>
+      </Modal>
+    );
+  }
+
   const placeholderIdea = ideaValue === "" ? "" : "Опиши свою идею";
   return (
     <div>
+      <RenderModalProgress/>
       <span>
         {placeholderIdea}
       </span>
