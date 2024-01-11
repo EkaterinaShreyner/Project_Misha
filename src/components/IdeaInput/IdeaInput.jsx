@@ -1,7 +1,7 @@
 import React from "react";
 import { useState,  } from "react";
 import { useNavigate } from 'react-router-dom';
-import { Button, Columns, Modal } from "react-bulma-components";
+import { Button, Columns, Level, Modal } from "react-bulma-components";
 import './IdeaInput.css'
 import RenderProgress from "../Progress/Progress"
 
@@ -13,8 +13,6 @@ function RenderIdeaInput() {
   function handleCheckIdea(e) {
     e.preventDefault();
     setShowModal(true);
-    console.log("isShowModal:", isShowModal)
-    // navigate('./progress-bar', { replace: true })
   }
 
   function RenderModalProgress() {
@@ -32,8 +30,23 @@ function RenderIdeaInput() {
             </Modal.Card.Title>
           </Modal.Card.Header>
           <Modal.Card.Body>
-            {RenderProgress()}
+            {RenderProgress(ideaValue)}
           </Modal.Card.Body>
+          <Modal.Card.Footer style={{justifyContent: "end"}}>
+            <Button.Group>
+              <Button
+                className="noLeftBottomRadius"
+                onClick={() => setShowModal(false)}>
+                  Закрыть
+              </Button>
+              <Button
+                color="black"
+                className="noLeftBottomRadius"
+                onClick={() => navigate('/promo', { replace: true })}>
+                  Узнать
+              </Button>
+            </Button.Group>
+          </Modal.Card.Footer>
         </Modal.Card>
       </Modal>
     );
