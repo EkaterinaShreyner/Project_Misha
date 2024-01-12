@@ -7,7 +7,11 @@ import CardIdeaList from '../CardIdeaList/CardIdeaList';
 function Main() {
   return (
     <main className="main">
-      <h1 className="main__title">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h1>
+      <div className="main__title">
+        <span>Lorem Ipsum is simply dummy text </span>
+        <span className='textHighlight'>of the printing</span>
+        <p>and typesetting industry.</p>
+      </div>
       <RenderIdeaInput />
       <CardIdeaList />
     </main>

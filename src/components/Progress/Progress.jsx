@@ -14,23 +14,20 @@ function RenderProgress(ideaValue) {
     setChance(randomNumber)
   }, []);
 
-  // function generateRandomNumber() {
-  //   const randomNumber = Math.floor(Math.random() * 100) + 1;
-  //   setChance(randomNumber)
-  // }
-
   return (
       <div>
-        <p>Ваша идея: {ideaValue}</p>
         <Columns>
           <Columns.Column>
+            <Card style={{width:'250px', height:'200px', backgroundColor:'#fff'}}>
+              <p>Ваша идея: {ideaValue}</p>
               <p>
                 ВЕРОЯТНОСТЬ УСПЕХА
               </p>
-            {ProgressBar(chance)}
+              {ProgressBar(chance)}
+            </Card>
           </Columns.Column>
           <Columns.Column>
-            <Card className="card noLeftBottomRadius">
+            <Card style={{width:'250px', height:'200px'}}>
               <p>
                 Но вообще-то вряд ли получится потому что…
               </p>
