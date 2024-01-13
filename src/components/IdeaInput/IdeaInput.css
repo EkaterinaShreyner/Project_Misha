@@ -1,12 +1,16 @@
-.noLeftBottomRadius {
-  border-bottom-left-radius: 0 !important;
-}
-
 .modal__container {
   width: 100%;
+  height: 100%;
+  background-color: #F1F2F3;
+  background: url(../../images/Frame.svg) repeat;
+}
+
+.modal__content {
+  background: 0;
 }
 
 .buttons {
   background-color: white;
   border: 0;
 }
+

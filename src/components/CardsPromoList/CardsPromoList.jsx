@@ -9,6 +9,7 @@ import Img4 from '../../images/pic4.svg'
 import Img5 from '../../images/pic5.svg'
 
 import './CardsPromoList.css'
+import FormIdea from "../FormIdea/FormIdea";
 
 function CardsPromoList() {
   const [emailValue, setEmailValue] = useState("");
@@ -52,15 +53,27 @@ function CardsPromoList() {
       ImageCards={ImageCards[index]}
     />
   ));
+
   return (
     <div className="promo">
       <p className="promo__title">
         Выбери промокод на какой из наших продуктов тебе прислать:
       </p>
+      
       <div className="promo__cards-list">
         {renderedCards}
       </div>
-      <Columns>
+      <span className="main__label">
+        {emailPlaceholder}
+      </span>
+      <FormIdea
+        // placeholder="Напиши свою почту, а мы пришлем результаты обработки твоей идеи нашим ИИ:"
+        ideaValue={emailValue}
+        // onCheckIdea={handleCheckIdea}
+        onChangeInput={(e) => setEmailValue(e.target.value)}
+      ></FormIdea>
+
+      {/* <Columns>
         <p>
           {emailPlaceholder}
         </p>
@@ -78,7 +91,7 @@ function CardsPromoList() {
             Прислать
           </Button>
         </Columns.Column>
-      </Columns>
+      </Columns> */}
     </div>
   );
 }

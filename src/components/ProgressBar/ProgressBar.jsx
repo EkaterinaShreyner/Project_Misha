@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import './ProgressBar.css';
 import { Progress } from "react-bulma-components";
 
 function ProgressBar(chance) {
@@ -26,13 +27,13 @@ function ProgressBar(chance) {
   }, [chance]);
 
   return (
-    <div>
-      <span>
+    <div className="check__progress-bar">
+      <span className="check__percent">
         {valueProgress}%
       </span>
       <Progress
         size='large'
-        className={`progress ${colorProgress}`}
+        className={`progress ${colorProgress} check__line`}
         max={100}
         value={valueProgress}/>
     </div> 

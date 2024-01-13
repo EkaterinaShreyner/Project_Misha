@@ -7,7 +7,7 @@ function CardPromo({text, crossedPrices, actualPrices, ImageCards}) {
   const [checkmark, setCheckMark] = useState(false);
 
   return (
-    <div className="card-pro">
+    <div className="card-promo-container">
       <div className="card-promo" onClick={() => setCheckMark(!checkmark)}>
           <h2 className="card-promo__title">
             {text}
@@ -22,8 +22,7 @@ function CardPromo({text, crossedPrices, actualPrices, ImageCards}) {
           </div>
           <img className="card-promo__image" src={ImageCards} alt="картинка"/>
       </div>
-      {/* <div className="card-promo__option"></div> */}
-      {checkmark && <div className="card-promo__option"></div>}
+      <div className={`card-promo__option ${checkmark? "card-promo__option_active" : ""}`}></div>
     </div>
   );
 }

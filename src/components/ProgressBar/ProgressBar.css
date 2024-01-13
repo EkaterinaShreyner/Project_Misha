@@ -1,0 +1,14 @@
+.check__percent {
+  color: #2F2F37;
+  font-family: Manrope;
+  font-size: 210px;
+  font-style: normal;
+  font-weight: 500;
+  /* line-height: normal; */
+  line-height: 230px;
+  letter-spacing: -10.5px;
+}
+
+.check__line {
+  margin-bottom: 45px;
+}
