@@ -37,13 +37,11 @@ function RenderIdeaInput() {
           >
             <Button.Group>
               <Button
-                className="noLeftBottomRadius"
                 onClick={() => setShowModal(false)}>
                   Закрыть
               </Button>
               <Button
                 color="black"
-                className="noLeftBottomRadius"
                 onClick={() => navigate('/promo', { replace: true })}>
                   Узнать
               </Button>
@@ -74,8 +72,9 @@ function RenderIdeaInput() {
         <Columns.Column size={3}>
           <Button
             type="submit"
+            style={{backgroundColor:'#8259F7', borderRadius:'12px 12px 12px 0px'}}
+            textColor="white"
             disabled={ideaValue === "" ? true : false}
-            color="info"
             className="noLeftBottomRadius"
             onClick={handleCheckIdea}
           >

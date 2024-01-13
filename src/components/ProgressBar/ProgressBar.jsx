@@ -31,6 +31,7 @@ function ProgressBar(chance) {
         {valueProgress}%
       </span>
       <Progress
+        size='large'
         className={`progress ${colorProgress}`}
         max={100}
         value={valueProgress}/>
