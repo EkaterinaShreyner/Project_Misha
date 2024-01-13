@@ -2,11 +2,11 @@ import React from "react";
 import { useState } from "react";
 import CardPromo from "../CardPromo/CardPromo";
 import { Button, Columns } from "react-bulma-components";
-import Img1 from '../../images/Vector.svg'
-import Img2 from '../../images/Vector (2).svg'
-import Img3 from '../../images/Vector (4).svg'
-import Img4 from '../../images/Vector (5).svg'
-import Img5 from '../../images/Vector (6).svg'
+import Img1 from '../../images/pic1.svg'
+import Img2 from '../../images/pic2.svg'
+import Img3 from '../../images/pic3.svg'
+import Img4 from '../../images/pic4.svg'
+import Img5 from '../../images/pic5.svg'
 
 import './CardsPromoList.css'
 
@@ -44,9 +44,13 @@ function CardsPromoList() {
   ];
 
   const renderedCards = promoText.map((text, index) => (
-    <Columns.Column key={index} size={2}>
-      {CardPromo(text, crossedPrices[index], actualPrices[index], ImageCards[index])}
-    </Columns.Column>
+    <CardPromo
+      key={index}
+      text={text}
+      crossedPrices={crossedPrices[index]}
+      actualPrices={actualPrices[index]}
+      ImageCards={ImageCards[index]}
+    />
   ));
   return (
     <div className="promo">

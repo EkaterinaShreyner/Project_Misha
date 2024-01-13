@@ -1,3 +1,12 @@
 .noLeftBottomRadius {
   border-bottom-left-radius: 0 !important;
 }
+
+.modal__container {
+  width: 100%;
+}
+
+.buttons {
+  background-color: white;
+  border: 0;
+}

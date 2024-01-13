@@ -18,6 +18,7 @@
   background-color: #2F2F37;
   padding: 20px 16px 24px;
   justify-content: space-between;
+  position: relative;
 }
 
 /* .card-promo__container {
@@ -28,7 +29,6 @@
 
 .card-promo__title {
   color: #F7F7F8;
-  font-family: Manrope;
   font-size: 30px;
   font-style: normal;
   font-weight: 500;
@@ -46,7 +46,6 @@
 
 .card-promo__price-previous {
   color: #70869D;
-  font-family: Manrope;
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
@@ -56,7 +55,6 @@
 
 .card-promo__price-actual {
   color: #3E6CFF;
-  font-family: Manrope;
   font-size: 40px;
   font-style: normal;
   font-weight: 400;
@@ -69,4 +67,22 @@
   right: 0;
   bottom: -1px;
   z-index: 0;
+}
+
+.card-promo__option {
+  background-color: #DCE0EC;
+  border-radius: 60px;
+  background-image: url(../../images/checkmark.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 78px;
+  height: 24px;
+}
+
+.card-pro {
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

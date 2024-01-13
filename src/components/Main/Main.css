@@ -3,7 +3,7 @@
 }
 
 .main__title {
-  width: 600px;
+  width: 640px;
   font-family: Manrope;
   color: #2F2F37 ;
   font-size: 48px;
@@ -11,4 +11,10 @@
   font-weight: 500;
   line-height: 110%;
   margin-bottom: 80px;
+}
+
+.main__title-span {
+  color: #F7F7F8;
+  background: #2F2F37;
+  border-radius: 16px 16px 0 16px;
 }

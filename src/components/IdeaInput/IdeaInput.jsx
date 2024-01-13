@@ -23,16 +23,18 @@ function RenderIdeaInput() {
         closeOnEsc="true"
         closeOnBlur="true"
         className="cardModal">
-        <Modal.Card>
+        <Modal.Card className="modal__container">
           <Modal.Card.Header>
-            <Modal.Card.Title textColor="success">
-              Оценка вашей идеи
+            <Modal.Card.Title textColor="success">l
             </Modal.Card.Title>
           </Modal.Card.Header>
           <Modal.Card.Body>
             {RenderProgress(ideaValue)}
           </Modal.Card.Body>
-          <Modal.Card.Footer style={{justifyContent: "end"}}>
+          <Modal.Card.Footer 
+            className="buttons"
+            style={{justifyContent: "end"}}
+          >
             <Button.Group>
               <Button
                 className="noLeftBottomRadius"
