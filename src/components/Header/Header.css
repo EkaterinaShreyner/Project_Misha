@@ -18,6 +18,12 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  opacity: 1;
+}
+
+.header__nav-item:hover {
+  opacity: 75%;
+  transition: opacity 1s linear;
 }
 
 .header__nav-item_active {

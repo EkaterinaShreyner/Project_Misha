@@ -70,4 +70,38 @@
   font-weight: 400;
   line-height: normal;
   border: 0;
+  opacity: 1;
+}
+
+.main__button-submit:disabled {
+  background-color: #8259F7 !important;
+  cursor: auto;
+  opacity: 1;
+}
+
+.main__button-submit:hover {
+  opacity: 65%;
+  transition: opacity 0.5s linear;
+  color: #F7F7F8;
+}
+
+@media screen and (max-width: 768px) {
+  .main__form {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main__button-submit {
+    width: 100%;
+    border-radius: 0px 12px 12px 12px;
+    height: 48px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main__input::placeholder {
+    font-size: 20px;
+  }
 }

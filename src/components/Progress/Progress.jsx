@@ -9,7 +9,7 @@ import iconVk from '../../images/brand-icon_vk.svg'
 import iconTg from '../../images/brand-icon_telegram.svg'
 import iconTw from '../../images/brand-icon_twitter.svg'
 
-function RenderProgress(ideaValue) {
+function RenderProgress(value) {
   const navigate = useNavigate();
   const [chance, setChance] = useState(0);
 
@@ -20,7 +20,7 @@ function RenderProgress(ideaValue) {
 
   return (
       <div className="check">
-        <p className="check__idea">{ideaValue}</p>
+        <p className="check__idea">{value}</p>
         <Columns>
           <Columns.Column>
               <p className="check__title">

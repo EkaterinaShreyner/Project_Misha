@@ -17,6 +17,17 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  justify-content: space-between;
-  
+  justify-content: space-between; 
+}
+
+@media screen and (max-width: 768px) {
+  .promo {
+    margin: 0 20px 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .promo__title {
+    font-size: 18px;
+  }
 }

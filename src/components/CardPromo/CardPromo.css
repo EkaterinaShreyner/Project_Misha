@@ -38,7 +38,7 @@
 }
 
 .card-promo__price-previous {
-  color: #70869D;
+  color: #7B709D;
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
@@ -47,7 +47,7 @@
 }
 
 .card-promo__price-actual {
-  color: #3E6CFF;
+  color: #8259F7;
   font-size: 40px;
   font-style: normal;
   font-weight: 400;
@@ -64,16 +64,21 @@
 }
 
 .card-promo__option {
-  background-color: #DCE0EC;
+  border: 1px solid #8259F7;
   border-radius: 60px;
-  background-image: url(../../images/checkmark.svg);
+  /* background-image: url(../../images/Vector37.svg);
   background-position: center;
-  background-repeat: no-repeat;
-  width: 78px;
+  background-repeat: no-repeat; */
+  width: 24px;
   height: 24px;
-  opacity: 0;
+  /* opacity: 0; */
 }
 
 .card-promo__option_active {
-  opacity: 1;
+  /* opacity: 1; */
+  width: 78px;
+  background-color: #8259F7;
+  background-image: url(../../images/Vector37.svg);
+  background-position: center;
+  background-repeat: no-repeat;
 }

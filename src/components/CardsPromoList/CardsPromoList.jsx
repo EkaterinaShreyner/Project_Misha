@@ -1,7 +1,6 @@
 import React from "react";
 import { useState } from "react";
 import CardPromo from "../CardPromo/CardPromo";
-import { Button, Columns } from "react-bulma-components";
 import Img1 from '../../images/pic1.svg'
 import Img2 from '../../images/pic2.svg'
 import Img3 from '../../images/pic3.svg'
@@ -67,8 +66,8 @@ function CardsPromoList() {
         {emailPlaceholder}
       </span>
       <FormIdea
-        // placeholder="Напиши свою почту, а мы пришлем результаты обработки твоей идеи нашим ИИ:"
-        ideaValue={emailValue}
+        placeholder="почта"
+        value={emailValue}
         // onCheckIdea={handleCheckIdea}
         onChangeInput={(e) => setEmailValue(e.target.value)}
       ></FormIdea>

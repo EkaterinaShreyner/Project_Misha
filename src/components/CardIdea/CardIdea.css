@@ -1,5 +1,4 @@
 .card-idea {
-  /* width: 618px; */
   display: flex;
   padding: 16px 20px;
   flex-direction: column;
@@ -21,6 +20,7 @@
 .card-idea__container {
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
 }
 
 .card-idea__chance {
@@ -49,4 +49,17 @@
 .card-idea__rating-container {
   display: flex;
   gap: 10px;
+}
+
+@media screen and (max-width: 1050px) {
+  .card-idea__container {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 635px) {
+  .card-idea {
+    width: 353px;
+  }
 }
