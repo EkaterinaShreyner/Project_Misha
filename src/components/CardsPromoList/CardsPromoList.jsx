@@ -13,43 +13,46 @@ import FormIdea from "../FormIdea/FormIdea";
 function CardsPromoList() {
   const [emailValue, setEmailValue] = useState("");
   const emailPlaceholder = emailValue === "" ? "" : "Напиши свою почту, а мы пришлем результаты обработки твоей идеи нашим ИИ:";
-  const promoText = [
-    "Набор идей для бизнеса сгенерированных специально для тебя",
-    "Проблемное интервью с потенциальными клиентами",
-    "Подбор сотрудников для твоего бизнеса",
-    "Разработка детального бизнес плана с помощью ИИ",
-    "Генерация рекламных материалов с помощью ИИ"
-  ];
-  const crossedPrices = [
-    "399",
-    "8999",
-    "1299",
-    "14699",
-    "6666"
-  ];
-  const actualPrices = [
-    "199",
-    "3899",
-    "1199",
-    "11999",
-    "4599"
+  const promoData = [
+    {
+      text: "Набор идей для бизнеса сгенерированных специально для тебя",
+      crossedPrice: "399",
+      actualPrice: "199",
+      image: Img1,
+    },
+    {
+      text: "Проблемное интервью с потенциальными клиентами",
+      crossedPrice: "8999",
+      actualPrice: "3899",
+      image: Img2,
+    },
+    {
+      text: "Подбор сотрудников для твоего бизнеса",
+      crossedPrice: "1299",
+      actualPrice: "1199",
+      image: Img3,
+    },
+    {
+      text: "Разработка детального бизнес плана с помощью ИИ",
+      crossedPrice: "14699",
+      actualPrice: "11999",
+      image: Img4,
+    },
+    {
+      text: "Генерация рекламных материалов с помощью ИИ",
+      crossedPrice: "6666",
+      actualPrice: "4599",
+      image: Img5,
+    },
   ];
 
-  const ImageCards = [
-    Img1,
-    Img2,
-    Img3,
-    Img4,
-    Img5,
-  ];
-
-  const renderedCards = promoText.map((text, index) => (
+  const renderedCards = promoData.map((data, index) => (
     <CardPromo
       key={index}
-      text={text}
-      crossedPrices={crossedPrices[index]}
-      actualPrices={actualPrices[index]}
-      ImageCards={ImageCards[index]}
+      text={data.text}
+      crossedPrices={data.crossedPrice}
+      actualPrices={data.actualPrice}
+      ImageCards={data.image}
     />
   ));
 

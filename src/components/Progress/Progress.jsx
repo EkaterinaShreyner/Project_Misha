@@ -9,44 +9,31 @@ import iconVk from '../../images/brand-icon_vk.svg'
 import iconTg from '../../images/brand-icon_telegram.svg'
 import iconTw from '../../images/brand-icon_twitter.svg'
 
+const SocialLink = ({ icon, label, onMouseEnter, onMouseLeave, showName }) => (
+  <li className="chech__link-item" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+    <a href="#" className="chech__link">
+      <img className="check__link-icon" src={icon} alt={`icon ${label}`} />
+      {showName && <span style={{ color: 'white' }}>{label}</span>}
+    </a>
+  </li>
+)
+
 function RenderProgress(value) {
   const navigate = useNavigate();
   const [chance, setChance] = useState(0);
-  const [showNameFb, setShowNameFb] = useState(false);
-  const [showNameVk, setShowNameVk] = useState(false);
-  const [showNameTg, setShowNameTg] = useState(false);
-  const [showNameX, setShowNameX] = useState(false);
+  const [showNames, setShowNames] = useState({
+    fb: false,
+    vk: false,
+    tg: false,
+    tw: false,
+  });
 
-  const handleFbMouseEnter = () => {
-    setShowNameFb(true);
+  const handleMouseEnter = (socialMedia) => {
+    setShowNames((prevShowNames) => ({ ...prevShowNames, [socialMedia]: true }));
   };
 
-  const handleFbMouseLeave = () => {
-    setShowNameFb(false);
-  };
-
-  const handleVkMouseEnter = () => {
-    setShowNameVk(true);
-  };
-
-  const handleVkMouseLeave = () => {
-    setShowNameVk(false);
-  };
-
-  const handleTgMouseEnter = () => {
-    setShowNameTg(true);
-  };
-
-  const handleTgMouseLeave = () => {
-    setShowNameTg(false);
-  };
-
-  const handleXMouseEnter = () => {
-    setShowNameX(true);
-  };
-
-  const handleXMouseLeave = () => {
-    setShowNameX(false);
+  const handleMouseLeave = (socialMedia) => {
+    setShowNames((prevShowNames) => ({ ...prevShowNames, [socialMedia]: false }));
   };
 
 
@@ -66,61 +53,34 @@ function RenderProgress(value) {
             {ProgressBar(chance)}
             <p className="check__result">Опубликовать результат</p>
             <ul className="check__links">
-              <li 
-                className="chech__link-item"
-                onMouseEnter={handleFbMouseEnter}
-                onMouseLeave={handleFbMouseLeave}>
-                <a href="#" class="chech__link">
-                  <img
-                    class="check__link-icon"
-                    src={iconFb}
-                    alt="icon Facebook"
-                  />
-                  {showNameFb && (
-                    <span style={{color:'white'}}>Facebook</span>)}
-                </a>
-              </li>
-              <li 
-                className="chech__link-item"
-                onMouseEnter={handleVkMouseEnter}
-                onMouseLeave={handleVkMouseLeave}>
-                <a href="#" class="chech__link">
-                  <img
-                    class="check__link-icon"
-                    src={iconVk}
-                  />
-                  {showNameVk && (
-                    <span style={{color:'white'}}>Vkontakte</span>)}
-                </a>
-              </li>
-              <li 
-                className="chech__link-item"
-                onMouseEnter={handleTgMouseEnter}
-                onMouseLeave={handleTgMouseLeave}>
-                <a href="#" class="chech__link">
-                  <img
-                    class="check__link-icon"
-                    src={iconTg}
-                    alt="icon Telegram"
-                  />
-                {showNameTg && (
-                  <span style={{color:'white'}}>Telegram</span>)}
-                </a>
-              </li>
-              <li 
-                className="chech__link-item"
-                onMouseEnter={handleXMouseEnter}
-                onMouseLeave={handleXMouseLeave}>
-                <a href="#" class="chech__link">
-                  <img
-                    class="check__link-icon"
-                    src={iconTw}
-                    alt="icon Twitter"
-                  />
-                  {showNameX && (
-                    <span style={{color:'white'}}>Twitter</span>)}
-                </a>
-              </li>
+              <SocialLink
+                icon={iconFb}
+                label="Facebook"
+                onMouseEnter={() => handleMouseEnter('fb')}
+                onMouseLeave={() => handleMouseLeave('fb')}
+                showName={showNames.fb}
+              />
+              <SocialLink
+                icon={iconVk}
+                label="Vkontakte"
+                onMouseEnter={() => handleMouseEnter('vk')}
+                onMouseLeave={() => handleMouseLeave('vk')}
+                showName={showNames.vk}
+              />
+              <SocialLink
+                icon={iconTg}
+                label="Telegram"
+                onMouseEnter={() => handleMouseEnter('tg')}
+                onMouseLeave={() => handleMouseLeave('tg')}
+                showName={showNames.tg}
+              />
+              <SocialLink
+                icon={iconTw}
+                label="Twitter"
+                onMouseEnter={() => handleMouseEnter('tw')}
+                onMouseLeave={() => handleMouseLeave('tw')}
+                showName={showNames.tw}
+              />
             </ul>
           </Columns.Column>
           <Columns.Column>
