@@ -19,27 +19,4 @@
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-
-.noLeftBottomRadius {
-  border-bottom-left-radius: 0 !important;
-}
-
-.centerContentResponsive {
-  display: flex;
-  justify-content: center;
-}
-
-.card {
-  padding: 10px;
-}
-
-.spaceBetweenContent {
-  display: flex;
-  justify-content: space-between;
 } */
-
-.cardModal {
-  border-color: red;
-  height: 720px;
-}

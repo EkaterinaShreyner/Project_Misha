@@ -21,7 +21,7 @@ function RenderIdeaInput() {
         onClose={() => setShowModal(false)} 
         closeOnEsc="true"
         closeOnBlur="true"
-        className="cardModal">
+        className="modal__background">
         <Modal.Card className="modal__container" closeOnBlur="false">
           {/* <Modal.Card.Header>
             <Modal.Card.Title textColor="success">l
@@ -30,11 +30,11 @@ function RenderIdeaInput() {
           <Modal.Card.Body className="modal__content">
             {RenderProgress(value)}
           </Modal.Card.Body>
-          <Modal.Card.Footer 
+          {/* <Modal.Card.Footer 
             className="buttons"
             style={{justifyContent: "end"}}
           >
-          </Modal.Card.Footer>
+          </Modal.Card.Footer> */}
         </Modal.Card>
       </Modal>
     );

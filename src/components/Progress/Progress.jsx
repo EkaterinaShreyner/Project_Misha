@@ -45,7 +45,7 @@ function RenderProgress(value) {
   return (
       <div className="check">
         <p className="check__idea">{value}</p>
-        <Columns>
+        <Columns className="check__container">
           <Columns.Column>
               <p className="check__title">
                 ВЕРОЯТНОСТЬ УСПЕХА

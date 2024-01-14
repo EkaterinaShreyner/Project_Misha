@@ -10,11 +10,6 @@
   background:  #DCE0EC;
 }
 
-.centerContentResponsive {
-  display: flex;
-  justify-content: center;
-}
-
 .check__idea {
   width: 811px;
   color: rgba(47, 47, 55, 0.35);
@@ -24,6 +19,10 @@
   font-weight: 400;
   line-height: normal;
   margin-bottom: 74px;
+}
+
+.check__container {
+  align-items: center;
 }
 
 .check__title {
