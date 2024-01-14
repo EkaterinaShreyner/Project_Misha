@@ -9,9 +9,47 @@ import iconVk from '../../images/brand-icon_vk.svg'
 import iconTg from '../../images/brand-icon_telegram.svg'
 import iconTw from '../../images/brand-icon_twitter.svg'
 
+
+
 function RenderProgress(ideaValue) {
   const navigate = useNavigate();
   const [chance, setChance] = useState(0);
+  const [showNameFb, setShowNameFb] = useState(false);
+  const [showNameVk, setShowNameVk] = useState(false);
+  const [showNameTg, setShowNameTg] = useState(false);
+  const [showNameX, setShowNameX] = useState(false);
+
+  const handleFbMouseEnter = () => {
+    setShowNameFb(true);
+  };
+
+  const handleFbMouseLeave = () => {
+    setShowNameFb(false);
+  };
+
+  const handleVkMouseEnter = () => {
+    setShowNameVk(true);
+  };
+
+  const handleVkMouseLeave = () => {
+    setShowNameVk(false);
+  };
+
+  const handleTgMouseEnter = () => {
+    setShowNameTg(true);
+  };
+
+  const handleTgMouseLeave = () => {
+    setShowNameTg(false);
+  };
+
+  const handleXMouseEnter = () => {
+    setShowNameX(true);
+  };
+
+  const handleXMouseLeave = () => {
+    setShowNameX(false);
+  };
 
   useEffect(() => {
     const randomNumber = Math.floor(Math.random() * 100) + 1;
@@ -34,9 +72,12 @@ function RenderProgress(ideaValue) {
                   <img
                     class="check__link-icon"
                     src={iconFb}
-                    alt="иконка Вконтакте"
+                    alt="icon Facebook"
+                    onMouseEnter={handleFbMouseEnter}
+                    onMouseLeave={handleFbMouseLeave}
                   />
-                  <p className="check__link-title">Facebook</p>
+                  {showNameFb && (
+                    <span style={{color:'white'}}>Facebook</span>)}
                 </a>
               </li>
               <li className="chech__link-item">
@@ -45,8 +86,11 @@ function RenderProgress(ideaValue) {
                     class="check__link-icon"
                     src={iconVk}
                     alt="иконка Вконтакте"
+                    onMouseEnter={handleVkMouseEnter}
+                    onMouseLeave={handleVkMouseLeave}
                   />
-                  <p className="check__link-title">Вконтакте</p>
+                  {showNameVk && (
+                    <span style={{color:'white'}}>Vkontakte</span>)}
                 </a>
               </li>
               <li className="chech__link-item">
@@ -54,9 +98,12 @@ function RenderProgress(ideaValue) {
                   <img
                     class="check__link-icon"
                     src={iconTg}
-                    alt="иконка Вконтакте"
+                    alt="icon Telegram"
+                    onMouseEnter={handleTgMouseEnter}
+                    onMouseLeave={handleTgMouseLeave}
                   />
-                  <p className="check__link-title">Telegram</p>
+                {showNameTg && (
+                  <span style={{color:'white'}}>Telegram</span>)}
                 </a>
               </li>
               <li className="chech__link-item">
@@ -64,9 +111,12 @@ function RenderProgress(ideaValue) {
                   <img
                     class="check__link-icon"
                     src={iconTw}
-                    alt="иконка Вконтакте"
+                    alt="icon Twitter"
+                    onMouseEnter={handleXMouseEnter}
+                    onMouseLeave={handleXMouseLeave}
                   />
-                  <p className="check__link-title">X-(Twitter)</p>
+                  {showNameX && (
+                    <span style={{color:'white'}}>Twitter</span>)}
                 </a>
               </li>
             </ul>
