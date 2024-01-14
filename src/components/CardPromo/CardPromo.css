@@ -20,13 +20,28 @@
   position: relative;
 }
 
-.card-promo__title {
+/* .card-promo__title {
+  display: flex;
+  flex-direction: column;
+} */
+
+.card-promo__title-normal {
   color: #F7F7F8;
   font-size: 30px;
   font-style: normal;
   font-weight: 500;
   line-height: 105%;
   width: 100%;
+}
+
+.card-promo__title-bold {
+  background: #DCE0EC;
+  border-radius: 10px 10px 10px 0;
+  color: #2F2F37;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%;
 }
 
 .card-promo__price {
@@ -71,14 +86,22 @@
   background-repeat: no-repeat; */
   width: 24px;
   height: 24px;
-  /* opacity: 0; */
 }
 
 .card-promo__option_active {
-  /* opacity: 1; */
   width: 78px;
   background-color: #8259F7;
   background-image: url(../../images/Vector37.svg);
   background-position: center;
   background-repeat: no-repeat;
+  animation: scaleMax 0.5s ease-in-out;
+}
+
+@keyframes scaleMax {
+  from {
+    width: 24px;
+  }
+  to {
+    width: 78px;
+  }
 }

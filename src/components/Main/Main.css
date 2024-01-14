@@ -16,8 +16,9 @@
 .main__title-span {
   color: #F7F7F8;
   background: #2F2F37;
-  border-radius: 16px 16px 0 16px;
-  font-size: 39px;
+  border-radius: 12px 12px 0 12px;
+  line-height: 140%;
+  font-size: 45px;
 }
 
 @media screen and (max-width: 768px) {

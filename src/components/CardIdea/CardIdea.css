@@ -3,8 +3,10 @@
   padding: 16px 20px;
   flex-direction: column;
   gap: 28px;
+  justify-content: space-between;
   border-radius: 0px 16px 16px 16px;
   background: #DCE0EC;
+  height: 187px;
 }
 
 .card-idea__title {
@@ -15,6 +17,9 @@
   font-weight: 400;
   line-height: 130%;
   letter-spacing: -0.48px;
+  text-overflow: ellipsis;
+  /* white-space: nowrap; */
+  overflow: hidden;
 }
 
 .card-idea__container {

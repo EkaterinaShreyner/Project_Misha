@@ -15,31 +15,41 @@ function CardsPromoList() {
   const emailPlaceholder = emailValue === "" ? "" : "Напиши свою почту, а мы пришлем результаты обработки твоей идеи нашим ИИ:";
   const promoData = [
     {
-      text: "Набор идей для бизнеса сгенерированных специально для тебя",
+      textStart: "Набор",
+      textBold: "идей",
+      textEnd: "для бизнеса сгенерированных специально для тебя",
       crossedPrice: "399",
       actualPrice: "199",
       image: Img1,
     },
     {
-      text: "Проблемное интервью с потенциальными клиентами",
+      textStart: "Проблемное",
+      textBold: "интервью",
+      textEnd: "с потенциальными клиентами",
       crossedPrice: "8999",
       actualPrice: "3899",
       image: Img2,
     },
     {
-      text: "Подбор сотрудников для твоего бизнеса",
+      textStart: "Подбор",
+      textBold: "сотрудников",
+      textEnd: "для твоего бизнеса",
       crossedPrice: "1299",
       actualPrice: "1199",
       image: Img3,
     },
     {
-      text: "Разработка детального бизнес плана с помощью ИИ",
+      textStart: "Разработка детального",
+      textBold: "бизнес плана",
+      textEnd: "с помощью ИИ",
       crossedPrice: "14699",
       actualPrice: "11999",
       image: Img4,
     },
     {
-      text: "Генерация рекламных материалов с помощью ИИ",
+      textStart: "Генерация",
+      textBold: "рекламных",
+      textEnd: "материалов с помощью ИИ",
       crossedPrice: "6666",
       actualPrice: "4599",
       image: Img5,
@@ -49,7 +59,9 @@ function CardsPromoList() {
   const renderedCards = promoData.map((data, index) => (
     <CardPromo
       key={index}
-      text={data.text}
+      textStart={data.textStart}
+      textBold={data.textBold}
+      textEnd={data.textEnd}
       crossedPrices={data.crossedPrice}
       actualPrices={data.actualPrice}
       ImageCards={data.image}
@@ -74,26 +86,6 @@ function CardsPromoList() {
         // onCheckIdea={handleCheckIdea}
         onChangeInput={(e) => setEmailValue(e.target.value)}
       ></FormIdea>
-
-      {/* <Columns>
-        <p>
-          {emailPlaceholder}
-        </p>
-        <Columns.Column>
-          <input 
-            className="input is-black" 
-            placeholder={"Напиши свою почту, а мы пришлем результаты обработки твоей идеи нашим ИИ:"}
-            size={9} 
-            value={emailValue} 
-            onChange={(e) => setEmailValue(e.target.value)}
-          />
-        </Columns.Column>
-        <Columns.Column size={3}>
-          <Button color="primary" className="noLeftBottomRadius">
-            Прислать
-          </Button>
-        </Columns.Column>
-      </Columns> */}
     </div>
   );
 }
