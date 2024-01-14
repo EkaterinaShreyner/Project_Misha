@@ -15,6 +15,7 @@ function CardsPromoList() {
   const emailPlaceholder = emailValue === "" ? "" : "Напиши свою почту, а мы пришлем результаты обработки твоей идеи нашим ИИ:";
   const promoData = [
     {
+      id: 1,
       textStart: "Набор",
       textBold: "идей",
       textEnd: "для бизнеса сгенерированных специально для тебя",
@@ -23,6 +24,7 @@ function CardsPromoList() {
       image: Img1,
     },
     {
+      id: 2,
       textStart: "Проблемное",
       textBold: "интервью",
       textEnd: "с потенциальными клиентами",
@@ -31,6 +33,7 @@ function CardsPromoList() {
       image: Img2,
     },
     {
+      id: 3,
       textStart: "Подбор",
       textBold: "сотрудников",
       textEnd: "для твоего бизнеса",
@@ -39,6 +42,7 @@ function CardsPromoList() {
       image: Img3,
     },
     {
+      id: 4,
       textStart: "Разработка детального",
       textBold: "бизнес плана",
       textEnd: "с помощью ИИ",
@@ -47,6 +51,7 @@ function CardsPromoList() {
       image: Img4,
     },
     {
+      id: 5,
       textStart: "Генерация",
       textBold: "рекламных",
       textEnd: "материалов с помощью ИИ",
@@ -59,6 +64,7 @@ function CardsPromoList() {
   const renderedCards = promoData.map((data, index) => (
     <CardPromo
       key={index}
+      id={data.id}
       textStart={data.textStart}
       textBold={data.textBold}
       textEnd={data.textEnd}
