@@ -3,7 +3,7 @@ import { useState } from "react";
 
 import './CardPromo.css'
 
-function CardPromo({id, textStart, textBold, textEnd, crossedPrices, actualPrices, ImageCards}) {
+function CardPromo({id, textStart, textBold, textFor, textEnd, crossedPrices, actualPrices, ImageCards}) {
   const [checkmark, setCheckMark] = useState(false);
   const [choosedPromoId, setChoosePromoId] = useState(-1);
   const handleClickPromo = () => { 
@@ -18,6 +18,7 @@ function CardPromo({id, textStart, textBold, textEnd, crossedPrices, actualPrice
             {textStart}
           </p>
           <span className="card-promo__title-bold">{textBold}</span>
+          <p className="card-promo__title-normal">{textFor}</p>
           <p className="card-promo__title-normal">{textEnd}</p>
         </div>
           <div className="card-promo__price">

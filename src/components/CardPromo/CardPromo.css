@@ -19,6 +19,7 @@
   justify-content: space-between;
   position: relative;
   cursor: pointer;
+  z-index: 1;
 }
 
 .card-promo__title-normal {
@@ -27,7 +28,6 @@
   font-style: normal;
   font-weight: 500;
   line-height: 105%;
-  width: 100%;
 }
 
 .card-promo__title-bold {
@@ -72,7 +72,7 @@
   position: absolute;
   right: -1px;
   bottom: -1px;
-  z-index: 0;
+  z-index: -1;
   border-bottom-right-radius: 16px;
 }
 
@@ -105,19 +105,18 @@
   }
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1439px) {
   .card-promo { 
     width: 310px;
-    height: 211px;
+    height: 220px;
   }
 }
 
-@media screen and (max-width: 1280px) {
-  .card-promo__image { 
-    width: 217px;
-    height: 217px;
+/* @media screen and (max-width: 1280px) {
+  .card-promo-container:last-of-type {
+    align-self: flex-start;
   }
-}
+} */
 
 @media screen and (max-width: 1280px) {
   .card-promo__title { 
@@ -137,5 +136,25 @@
 @media screen and (max-width: 1280px) {
   .card-promo__title-bold { 
     font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .card-promo__price {
+    position: absolute;
+    bottom: 14px;
+    right: 16px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .card-promo__price-previous {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .card-promo__price-actual {
+    font-size: 36px;
   }
 }

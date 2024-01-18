@@ -20,14 +20,15 @@ function Promo(props) {
   // const emailPlaceholder = emailValue === "" ? "" : "Напиши свою почту, а мы пришлем результаты обработки твоей идеи нашим ИИ:";
   const emailPlaceholder = "Напиши свою почту, а мы пришлем результаты обработки твоей идеи нашим ИИ:";
   const isHiddenMobile = () => {
-    return window.innerWidth <= 768;
+    return window.innerWidth <= 1280;
   }
   const promoData = [
     {
       id: 1,
       textStart: "Набор",
       textBold: "идей",
-      textEnd: "для бизнеса сгенерированных специально для тебя",
+      textFor: "для",
+      textEnd: "бизнеса сгенерированных специально для тебя",
       crossedPrice: "399",
       actualPrice: "199",
       image: Img1,
@@ -81,10 +82,12 @@ function Promo(props) {
       id={data.id}
       textStart={data.textStart}
       textBold={data.textBold}
+      textFor={data.textFor}
       textEnd={data.textEnd}
       crossedPrices={data.crossedPrice}
       actualPrices={data.actualPrice}
-      ImageCards={isHiddenMobile ? data.imageMobile : data.image }
+      ImageCards={isHiddenMobile() ? data.imageMobile : data.image }
+      // ImageCards={data.imageMobile}
     />
   ));
 
