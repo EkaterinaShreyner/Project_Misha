@@ -19,6 +19,9 @@ function Promo(props) {
   const [emailValue, setEmailValue] = useState("");
   // const emailPlaceholder = emailValue === "" ? "" : "Напиши свою почту, а мы пришлем результаты обработки твоей идеи нашим ИИ:";
   const emailPlaceholder = "Напиши свою почту, а мы пришлем результаты обработки твоей идеи нашим ИИ:";
+  const isHiddenMobile = () => {
+    return window.innerWidth <= 768;
+  }
   const promoData = [
     {
       id: 1,
@@ -81,7 +84,7 @@ function Promo(props) {
       textEnd={data.textEnd}
       crossedPrices={data.crossedPrice}
       actualPrices={data.actualPrice}
-      ImageCards={props.isShowModal ? data.imageMobile : data.image }
+      ImageCards={isHiddenMobile ? data.imageMobile : data.image }
     />
   ));
 

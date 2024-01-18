@@ -78,7 +78,7 @@ function CardIdeaList() {
     <Button 
       backgroundColor='black'
       textColor='white'
-      style={{borderRadius:'12px 0px 12px 12px', marginTop: '15px'}}
+      style={{borderRadius:'12px 0px 12px 12px', marginTop: '15px', width: '-webkit-fill-available'}}
       onClick={() => setShowCards(prevValue => prevValue + 1)}
       > 
       Смотреть еще
@@ -88,35 +88,35 @@ function CardIdeaList() {
   <>
     <div className="card-idea__list card-idea__list-container">
       <div className="card-idea__nav">
-        <p className="card-idea__type" style={shownNewIdea ? {color: 'rgba(47, 47, 55, 0.35)'} : {}} onClick={() => setShowNewIdea(false)}>Лучшие идеи</p>
-        <p className="card-idea__type" style={!shownNewIdea ? {color: 'rgba(47, 47, 55, 0.35)'} : {}} onClick={() => setShowNewIdea(true)}>Новые идеи</p>
+        <p className="card-idea__type" style={shownNewIdea ? {color: 'rgba(47, 47, 55, 0.35)'} : {}} onClick={() => {setShowNewIdea(false); setShowCards(3)}}>Лучшие идеи</p>
+        <p className="card-idea__type" style={!shownNewIdea ? {color: 'rgba(47, 47, 55, 0.35)'} : {}} onClick={() => {setShowNewIdea(true); setShowCards(3)}}>Новые идеи</p>
       </div>
         {shownNewIdea ? newIdeas : bestIdeas}
     </div>
     {showCards !== bestIdeasList.length && renderButtonShowMore}
   </>
   const renderDesktop =
-    <Columns>
-      <Columns.Column className="card-idea__list-container">
-        <p className="card-idea__type">Лучшие идеи</p>
-        {bestIdeas}
-      </Columns.Column>
-      <Columns.Column>
-        <p className="card-idea__type">Новые идеи</p>
-        {newIdeas}
-      </Columns.Column>
-    </Columns>
-  
-    // <div className="card-idea__list">
-    //   <div className="card-idea__list-container">
+    // <Columns>
+    //   <Columns.Column className="card-idea__list-container">
     //     <p className="card-idea__type">Лучшие идеи</p>
     //     {bestIdeas}
-    //   </div>
-    //   <div className=" card-idea__list-container">
-    //   <p className="card-idea__type">Новые идеи</p>
+    //   </Columns.Column>
+    //   <Columns.Column className="card-idea__list-container">
+    //     <p className="card-idea__type">Новые идеи</p>
     //     {newIdeas}
-    //   </div>
-    // </div>
+    //   </Columns.Column>
+    // </Columns>
+  
+    <div className="card-idea__list">
+      <div className="card-idea__list-container">
+        <p className="card-idea__type">Лучшие идеи</p>
+        {bestIdeas}
+      </div>
+      <div className=" card-idea__list-container">
+      <p className="card-idea__type">Новые идеи</p>
+        {newIdeas}
+      </div>
+    </div>
 
   return (
     <>

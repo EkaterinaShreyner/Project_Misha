@@ -10,7 +10,7 @@ import iconTg from '../../images/brand-icon_telegram.svg'
 import iconTw from '../../images/brand-icon_twitter.svg'
 
 const SocialLink = ({ icon, label, onMouseEnter, onMouseLeave, showName }) => (
-  <li className="chech__link-item" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+  <li className="chech__link-item" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} onClick={() => {}}>
     <a href="#" className="chech__link">
       <img className="check__link-icon" src={icon} alt={`icon ${label}`} />
       {showName && <span style={{ color: 'white' }}>{label}</span>}
