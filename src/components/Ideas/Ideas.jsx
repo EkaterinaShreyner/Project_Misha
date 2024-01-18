@@ -22,7 +22,7 @@ function Ideas(props) {
         </button>
       </div>
       <CardIdeaList />
-      {/* {props.isShowModal && <Link to="/" className="ideas__nav-back">Вернуться к началу</Link>} */}
+      <Link to="/" className="ideas__nav-back">Вернуться к началу</Link>
     </div>
   )
 }

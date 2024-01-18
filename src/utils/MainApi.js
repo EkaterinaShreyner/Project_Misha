@@ -4,7 +4,7 @@ export const BASE_URL = "http://localhost:4000";
 
 // получить идеи
 export const getCards = () => {
-  return fetch(`${BASE_URL}/`, {
+  return fetch(`${BASE_URL}`, {
     method: 'GET',
     headers: {
       "Content-Type": "application/json",
@@ -15,14 +15,14 @@ export const getCards = () => {
 }
 
 // создать идею
-export const register = (text) => {
+export const createNewCard = (title) => {
   return fetch(`${BASE_URL}/`, {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({text})
+    body: JSON.stringify({title})
   })
   .then((res) => res.ok ? res.json() : Promise.reject(res.status));
 }

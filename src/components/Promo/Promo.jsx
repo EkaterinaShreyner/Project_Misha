@@ -13,6 +13,7 @@ import ImgMobile4 from '../../images/VectorMobile4.svg'
 
 import './Promo.css'
 import FormIdea from "../FormIdea/FormIdea";
+import { Link } from "react-router-dom";
 
 function Promo(props) {
   const [emailValue, setEmailValue] = useState("");
@@ -101,6 +102,7 @@ function Promo(props) {
         // onCheckIdea={handleCheckIdea}
         onChangeInput={(e) => setEmailValue(e.target.value)}
       ></FormIdea>
+      <Link to="/" className="ideas__nav-back">Вернуться к началу</Link>
     </div>
   );
 }

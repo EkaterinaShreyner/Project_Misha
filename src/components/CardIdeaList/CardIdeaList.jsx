@@ -6,6 +6,15 @@ import { Link } from 'react-router-dom';
 function CardIdeaList() {
   const [shownNewIdea, setShowNewIdea] = useState(false);
 
+  // const bestIdeas = props.cardIdeaList.map((data, index) => (
+  //   <CardIdea
+  //     key={index}
+  //     title={data.title}
+  //     likes={data.likes}
+  //     dislikes={data.dislikes}
+  //   />
+  // ));
+
   const bestIdeas = 
   <>
     <CardIdea title="Булочная"></CardIdea>

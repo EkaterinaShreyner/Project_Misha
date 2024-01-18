@@ -6,6 +6,7 @@
 }
 
 .card-idea__list-container {
+  margin-top: 128px;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -24,9 +25,8 @@
   line-height: normal;
 }
 
-/* @media screen and (max-width: 768px) {
-  .card-idea__nav {
-    display: flex;
-    align-items: flex-start;
+@media screen and (max-width: 768px) {
+  .card-idea__list-container {
+    margin-top: 51px;
   }
-} */
+}
