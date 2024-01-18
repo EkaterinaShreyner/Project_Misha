@@ -2,10 +2,44 @@ import React, { useState } from 'react';
 import './CardIdeaList.css';
 import CardIdea from '../CardIdea/CardIdea';
 import { Link } from 'react-router-dom';
+import { Columns, Button } from "react-bulma-components";
 
 function CardIdeaList() {
   const [shownNewIdea, setShowNewIdea] = useState(false);
+  const [showCards, setShowCards] = useState(3);
 
+  const bestIdeasList = [
+    {
+      id: 1,
+      title: "булочная1",
+      likes: 100,
+      chance: "100%",
+      dislikes: 1
+    },
+    {
+      id: 2,
+      title: "булочная2",
+      likes: 400,
+      chance: "40%",
+      dislikes: 40
+    },
+    {
+      id: 3,
+      title: "булочная3",
+      likes: 300,
+      chance: "30%",
+      dislikes: 30
+    },
+    {
+      id: 4,
+      title: "булочная4",
+      likes: 200,
+      chance: "14%",
+      dislikes: 10
+    },
+  ]
+   
+  
   // const bestIdeas = props.cardIdeaList.map((data, index) => (
   //   <CardIdea
   //     key={index}
@@ -16,46 +50,77 @@ function CardIdeaList() {
   // ));
 
   const bestIdeas = 
-  <>
-    <CardIdea title="Булочная"></CardIdea>
-    <CardIdea title="Булочная2"></CardIdea>
-    <CardIdea title="Булочная3"></CardIdea>
-  </>
+    bestIdeasList.slice(0, showCards).map((data, index) => (
+      <CardIdea
+        key={index}
+        title={data.title}
+        likes={data.likes}
+        dislikes={data.dislikes}
+        chance={data.chance}
+      />
+    ))
   const newIdeas = 
-  <>
-    <CardIdea title="Автомойка"></CardIdea>
-    <CardIdea title="Автомойка2"></CardIdea>
-    <CardIdea title="Автомойка3"></CardIdea>
-  </>
+    bestIdeasList.slice(0, showCards).map((data, index) => (
+      <CardIdea
+        key={index}
+        title={data.title}
+        likes={data.likes}
+        dislikes={data.dislikes}
+        chance={data.chance}
+      />
+    ))
 
   const isHiddenMobile = () => {
     return window.innerWidth <= 768;
   }
 
-  const renderMobile = 
-  <div className="card-idea__list card-idea__list-container">
-    <div className="card-idea__nav">
-      <p className="card-idea__type" onClick={() => setShowNewIdea(false)}>Лучшие идеи</p>
-      <p className="card-idea__type" onClick={() => setShowNewIdea(true)}>Новые идеи</p>
-    </div>
-      {shownNewIdea? newIdeas : bestIdeas}
-  </div>
+  const renderButtonShowMore = 
+    <Button 
+      backgroundColor='black'
+      textColor='white'
+      style={{borderRadius:'12px 0px 12px 12px', marginTop: '15px'}}
+      onClick={() => setShowCards(prevValue => prevValue + 1)}
+      > 
+      Смотреть еще
+    </Button>
 
-  const renderDecktop =
-  <div className="card-idea__list">
-    <div className=" card-idea__list-container">
-      <p className="card-idea__type">Лучшие идеи</p>
-      {bestIdeas}
+  const renderMobile = 
+  <>
+    <div className="card-idea__list card-idea__list-container">
+      <div className="card-idea__nav">
+        <p className="card-idea__type" style={shownNewIdea ? {color: 'rgba(47, 47, 55, 0.35)'} : {}} onClick={() => setShowNewIdea(false)}>Лучшие идеи</p>
+        <p className="card-idea__type" style={!shownNewIdea ? {color: 'rgba(47, 47, 55, 0.35)'} : {}} onClick={() => setShowNewIdea(true)}>Новые идеи</p>
+      </div>
+        {shownNewIdea ? newIdeas : bestIdeas}
     </div>
-    <div className=" card-idea__list-container">
-    <p className="card-idea__type">Новые идеи</p>
-      {newIdeas}
-    </div>
-  </div>
+    {showCards !== bestIdeasList.length && renderButtonShowMore}
+  </>
+  const renderDesktop =
+    <Columns>
+      <Columns.Column className="card-idea__list-container">
+        <p className="card-idea__type">Лучшие идеи</p>
+        {bestIdeas}
+      </Columns.Column>
+      <Columns.Column>
+        <p className="card-idea__type">Новые идеи</p>
+        {newIdeas}
+      </Columns.Column>
+    </Columns>
+  
+    // <div className="card-idea__list">
+    //   <div className="card-idea__list-container">
+    //     <p className="card-idea__type">Лучшие идеи</p>
+    //     {bestIdeas}
+    //   </div>
+    //   <div className=" card-idea__list-container">
+    //   <p className="card-idea__type">Новые идеи</p>
+    //     {newIdeas}
+    //   </div>
+    // </div>
 
   return (
     <>
-      {!isHiddenMobile()? renderDecktop : renderMobile}
+      {!isHiddenMobile() ? renderDesktop : renderMobile}
     </>
   )
 }

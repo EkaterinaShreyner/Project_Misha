@@ -26,7 +26,14 @@
 }
 
 @media screen and (max-width: 768px) {
+  .card-idea__list {
+    align-items: start;
+  }
+}
+
+@media screen and (max-width: 768px) {
   .card-idea__list-container {
     margin-top: 51px;
+    box-sizing: initial;
   }
 }
