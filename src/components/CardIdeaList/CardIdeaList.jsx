@@ -1,74 +1,55 @@
 import React, { useState } from 'react';
 import './CardIdeaList.css';
 import CardIdea from '../CardIdea/CardIdea';
-import { Form, Field } from "react-bulma-components";
+import { Link } from 'react-router-dom';
 
 function CardIdeaList() {
-const [shownNewIdea, setShowNewIdea] = useState(false);
+  const [shownNewIdea, setShowNewIdea] = useState(false);
 
-const bestIdeas = 
-<div>
-      <CardIdea title="jjjСоздание платформы для персонализированных образовательных путеводителей. Создание платформы для персонализированных образовательных Создание платформы для персонализированных образовательных Создание платформы для персонализированных образовательных путеводителейпутеводителейпутеводителейПользователи могут вводить свои интересы, уровень знаний и цели, а система, используя искусственный интеллект, предоставляет индивидуализированный план обучения с рекомендациями курсов, проектов и ресурсов."></CardIdea>
-      <CardIdea title="Создание платформы для персонализированных образовательных путеводителей. Пользователи могут вводить свои интересы, уровень знаний и цели, а система, используя искусственный интеллект, предоставляет индивидуализированный план обучения с рекомендациями курсов, проектов и ресурсов.
-      "></CardIdea>
-      <CardIdea title="Создание платформы для персонализированных образовательных путеводителей. Пользователи могут вводить свои интересы, уровень знаний и цели, а система, используя искусственный интеллект, предоставляет индивидуализированный план обучения с рекомендациями курсов, проектов и ресурсов.
-      "></CardIdea>
-</div>
-const newIdeas = 
-<div>
-      <CardIdea title="1лей. Пользователи могут вводить свои интересы, уровень знаний и цели, а система, используя искусственный интеллект, предоставляет индивидуализированный план обучения с рекомендациями курсов, проектов и ресурсов.
-      "></CardIdea>
-      <CardIdea title="2Создание платформы для персонализированных образовательных путеводителей. Пользователи могут вводить свои интересы, уровень знаний и цели, а система, используя искусственный интеллект, предоставляет индивидуализированный план обучения с рекомендациями курсов, проектов и ресурсов.
-      "></CardIdea>
-      <CardIdea title="ов и ресурсов."></CardIdea>
-</div>
+  const bestIdeas = 
+  <>
+    <CardIdea title="Булочная"></CardIdea>
+    <CardIdea title="Булочная2"></CardIdea>
+    <CardIdea title="Булочная3"></CardIdea>
+  </>
+  const newIdeas = 
+  <>
+    <CardIdea title="Автомойка"></CardIdea>
+    <CardIdea title="Автомойка2"></CardIdea>
+    <CardIdea title="Автомойка3"></CardIdea>
+  </>
 
-const isHiddenMobile = () => {
-      return window.innerWidth <= 768;
-    };
+  const isHiddenMobile = () => {
+    return window.innerWidth <= 768;
+  }
 
-const renderMobile = 
+  const renderMobile = 
+  <div className="card-idea__list card-idea__list-container">
+    <div className="card-idea__nav">
+      <p className="card-idea__type" onClick={() => setShowNewIdea(false)}>Лучшие идеи</p>
+      <p className="card-idea__type" onClick={() => setShowNewIdea(true)}>Новые идеи</p>
+    </div>
+      {shownNewIdea? newIdeas : bestIdeas}
+  </div>
 
-<div className="card-idea__list card-idea__list-container">
-      <div className="card-idea__nav">
-            <span className="card-idea__type" onClick={() => setShowNewIdea(false)}>Лучшие идеи</span>
-            <span className="card-idea__type" onClick={() => setShowNewIdea(true)}>Новые идеи</span>
-      </div>
-      
-            {shownNewIdea? newIdeas : bestIdeas}
-</div>
-
-const renderDecktop = 
-<div className="card-idea__list">
-<div className=" card-idea__list-container">
+  const renderDecktop =
+  <div className="card-idea__list">
+    <div className=" card-idea__list-container">
       <p className="card-idea__type">Лучшие идеи</p>
-      <CardIdea title="- - Пользователи могут вводить свои интересы,- Пользователи могут вводить свои интересы,- Пользователи могут вводить свои интересы,- Пользователи могут вводить свои интересы,Пользователи могут вводить свои интересы,- Пользователи могут вводить свои интересы,- Пользователи могут вводить свои интересы,- Пользователи могут вводить свои интересы,- Пользователи могут вводить свои интересы,- Пользователи могут вводить свои интересы, уровень знаний и цели, а система, используя искусственный интеллект, предоставляет индивидуализированный план обучения с рекомендациями курсов, проектов и ресурсов.
-"></CardIdea>
-      <CardIdea title="- Пользователи могут вводить свои интересы, уровень знаний и цели, а система, используя искусственный интеллект, предоставляет индивидуализированный план обучения с рекомендациями курсов, проектов и ресурсов.
-"></CardIdea>
-      <CardIdea title="fqи интере"></CardIdea>
-      </div>
-      <div className="card-idea__list-container">
-      <p className="card-idea__type">Новые идеи</p>
-      <CardIdea title="Создание платформы для персонализированных образовательных путеводителей. Пользователи могут вводить свои интересы, уровень знаний и цели, а система, используя искусственный интеллект, предоставляет индивидуализированный план обучения с рекомендациями курсов, проектов и ресурсов.
-"></CardIdea>
-      <CardIdea title="Создание платформы для персонализированных образовательных путеводителей. Пользователи могут вводить свои интересы, уровень знаний и цели, а система, используя искусственный интеллект, предоставляет индивидуализированный план обучения с рекомендациями курсов, проектов и ресурсов.
-"></CardIdea>
-      <CardIdea title="Создание платформы для персонализированных образовательных путеводителей. Пользователи могут вводить свои интересы, уровень знаний и цели, а система, используя искусственный интеллект, предоставляет индивидуализированный план обучения с рекомендациями курсов, проектов и ресурсов.
-"></CardIdea>
-      </div>
-</div>
-
-
+      {bestIdeas}
+    </div>
+    <div className=" card-idea__list-container">
+    <p className="card-idea__type">Новые идеи</p>
+      {newIdeas}
+    </div>
+  </div>
 
   return (
-<div>
-
-
-        {!isHiddenMobile()? renderDecktop : renderMobile}
-        </div>
-
+    <>
+      {!isHiddenMobile()? renderDecktop : renderMobile}
+    </>
   )
 }
 
-export default CardIdeaList
+export default CardIdeaList;
+

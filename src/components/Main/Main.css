@@ -1,5 +1,7 @@
 .main {
   margin: 67px 90px 40px;
+  display: flex;
+  flex-direction: column;
 }
 
 .main__title {

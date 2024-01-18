@@ -17,7 +17,7 @@ function Header() {
             <NavLink to="/other-ideas" className={({isActive}) => `header__nav-item ${isActive ? "header__nav-item_active" : ""}`}>Оценить чужие идеи</NavLink>
           </li>
         </ul>
-        {currentPath !== '/' && <Link to="/" className="header__nav-item">Вернуться к началу</Link> }
+        {currentPath !== '/' && <Link to="/" className="header__nav-back">Вернуться к началу</Link> }
       </nav>
     </header>
   )

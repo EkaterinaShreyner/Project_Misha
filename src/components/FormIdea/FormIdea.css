@@ -5,19 +5,6 @@
   align-items: end;
 }
 
-.main__label {
-  color: #2F2F37;
-  /* font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal; */
-
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
-
 .main__input {
   height: 51px;
   background: transparent;
@@ -28,6 +15,11 @@
   border-left-color: transparent;
   border-right-color: transparent;
   padding: 12px 0;
+  font-family: Manrope;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .main__input:focus {

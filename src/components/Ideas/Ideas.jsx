@@ -1,8 +1,10 @@
 import React from 'react';
+
 import './Ideas.css';
 import CardIdeaList from '../CardIdeaList/CardIdeaList';
+import { Link } from 'react-router-dom';
 
-function Ideas() {
+function Ideas(props) {
   return (
     <div className="ideas">
       <p className="ideas__title">Создание платформы для персонализированных образовательных путеводителей. Пользователи могут вводить свои интересы, уровень знаний и цели, а система, используя искусственный интеллект, предоставляет индивидуализированный план обучения с рекомендациями курсов, проектов и ресурсов.
@@ -20,6 +22,7 @@ function Ideas() {
         </button>
       </div>
       <CardIdeaList />
+      {/* {props.isShowModal && <Link to="/" className="ideas__nav-back">Вернуться к началу</Link>} */}
     </div>
   )
 }

@@ -21,11 +21,6 @@
   cursor: pointer;
 }
 
-/* .card-promo__title {
-  display: flex;
-  flex-direction: column;
-} */
-
 .card-promo__title-normal {
   color: #F7F7F8;
   font-size: 30px;
@@ -107,5 +102,40 @@
   }
   to {
     width: 78px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .card-promo { 
+    width: 310px;
+    height: 211px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .card-promo__image { 
+    width: 217px;
+    height: 217px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .card-promo__title { 
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    align-items: baseline;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .card-promo__title-normal { 
+    font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .card-promo__title-bold { 
+    font-size: 28px;
   }
 }

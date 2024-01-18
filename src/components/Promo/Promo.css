@@ -20,6 +20,14 @@
   justify-content: space-between; 
 }
 
+.promo__label {
+  color: #2F2F37;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
 @media screen and (max-width: 768px) {
   .promo {
     margin: 0 20px 0;

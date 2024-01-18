@@ -5,20 +5,21 @@ import './IdeaInput.css'
 import RenderProgress from "../Progress/Progress"
 import FormIdea from "../FormIdea/FormIdea";
 
-function RenderIdeaInput() {
+function IdeaInput(props) {
   const [value, setValue] = useState("");
-  const [isShowModal, setShowModal] = useState(false)
+  // const [isShowModal, setShowModal] = useState(false)
 
   function handleCheckIdea(e) {
     e.preventDefault();
-    setShowModal(true);
+    props.setShowModal(true);
+    // props.setShowModal(true);
   }
 
   function RenderModalProgress() {
     return (
       <Modal 
-        show={isShowModal}
-        onClose={() => setShowModal(false)} 
+        show={props.isShowModal}
+        onClose={() => props.setShowModal(false)} 
         closeOnEsc="true"
         closeOnBlur="true"
         className="modal__background">
@@ -44,9 +45,9 @@ function RenderIdeaInput() {
   return (
     <div>
       <RenderModalProgress/>
-      <span className="main__label">
+      {/* <span className="main__label">
         {placeholderIdea}
-      </span>
+      </span> */}
       {/* <Columns>
         <Columns.Column>
           <input 
@@ -81,4 +82,4 @@ function RenderIdeaInput() {
   );
 }
 
-export default RenderIdeaInput;
+export default IdeaInput;

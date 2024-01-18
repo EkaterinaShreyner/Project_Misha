@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import "bulma/css/bulma.min.css";
 import "./App.css";
@@ -6,11 +6,13 @@ import { Box } from "react-bulma-components";
 
 import Header from "../Header/Header";
 import RenderProgress from "../Progress/Progress";
-import CardsPromoList from "../CardsPromoList/CardsPromoList";
+import Promo from "../Promo/Promo";
 import Main from "../Main/Main";
 import Ideas from "../Ideas/Ideas";
 
 function App() {
+
+  const [isShowModal, setShowModal] = useState(false);
   return (
     <Routes>
       <Route
@@ -18,7 +20,7 @@ function App() {
         element={
           <>
             <Header/>
-            <Main/>
+            <Main isShowModal={isShowModal} setShowModal={() => setShowModal(true)}/>
           </>
         }
       ></Route>
@@ -27,7 +29,7 @@ function App() {
         element={
           <>
             <Header/>
-            <Ideas/>
+            <Ideas isShowModal={isShowModal}/>
           </>
         }
       ></Route>
@@ -45,7 +47,7 @@ function App() {
         element={
           <>
             <Header/>
-            <CardsPromoList/>
+            <Promo isShowModal={isShowModal}/>
           </>
         }
       ></Route>

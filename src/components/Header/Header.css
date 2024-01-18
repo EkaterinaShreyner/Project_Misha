@@ -14,7 +14,7 @@
 
 .header__nav-item {
   color: rgba(47, 47, 55, 0.35);
-  font-size: 24px;
+  font-size: 21px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -28,6 +28,15 @@
 
 .header__nav-item_active {
   color: #2F2F37;
+}
+
+.header__nav-back {
+  /* font-family: Manrope; */
+  color: rgba(47, 47, 55, 0.35);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 @media screen and (max-width: 768px) {
@@ -46,5 +55,11 @@
 @media screen and (max-width: 768px) {
   .header__nav-item {
     font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header__nav-back {
+    display: none;
   }
 }
