@@ -4,22 +4,26 @@ import { Modal } from "react-bulma-components";
 import './IdeaInput.css'
 import RenderProgress from "../Progress/Progress"
 import FormIdea from "../FormIdea/FormIdea";
+import * as mainApi from "../../utils/MainApi";
+
 
 function IdeaInput(props) {
   const [value, setValue] = useState("");
-  // const [isShowModal, setShowModal] = useState(false)
+  const [isShowModal, setShowModal] = useState(false)
 
   function handleCheckIdea(e) {
     e.preventDefault();
-    props.setShowModal(true);
-    // props.setShowModal(true);
+    mainApi.createNewCard({
+      title: value
+    })
+    setShowModal(true);
   }
 
   function RenderModalProgress() {
     return (
       <Modal 
-        show={props.isShowModal}
-        onClose={() => props.setShowModal(false)} 
+        show={isShowModal}
+        onClose={() => setShowModal(false)} 
         closeOnEsc="true"
         closeOnBlur="true"
         className="modal__background">
@@ -40,38 +44,9 @@ function IdeaInput(props) {
       </Modal>
     );
   }
-
-  const placeholderIdea = value === "" ? "" : "Опиши свою идею";
   return (
     <div>
       <RenderModalProgress/>
-      {/* <span className="main__label">
-        {placeholderIdea}
-      </span> */}
-      {/* <Columns>
-        <Columns.Column>
-          <input 
-            className="main__input input" 
-            placeholder={"Опиши свою идею"}
-            size={9} 
-            value={value} 
-            onChange={(e) => setValue(e.target.value)}>
-          </input>
-        </Columns.Column> */}
-        {/* <Columns.Column size={3}>
-          <Button
-            type="submit"
-            style={{backgroundColor:'#8259F7', borderRadius:'12px 12px 12px 0px'}}
-            textColor="white"
-            disabled={value === "" ? true : false}
-            className="noLeftBottomRadius"
-            onClick={handleCheckIdea}
-          >
-              Оценить
-          </Button>
-        </Columns.Column> */}
-      {/* </Columns> */}
-
       <FormIdea
         placeholder="Опиши свою идею"
         value={value}

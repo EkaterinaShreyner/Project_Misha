@@ -25,7 +25,6 @@ function App() {
       .catch((err) => console.log(err))
   }, [])
 
-  const [isShowModal, setShowModal] = useState(false);
   return (
     <Routes>
       <Route
@@ -33,7 +32,7 @@ function App() {
         element={
           <>
             <Header/>
-            <Main cardIdeaList={cardIdeaList} isShowModal={isShowModal} setShowModal={() => setShowModal(true)}/>
+            <Main cardIdeaList={cardIdeaList} />
           </>
         }
       ></Route>
@@ -42,7 +41,7 @@ function App() {
         element={
           <>
             <Header/>
-            <Ideas cardIdeaList={cardIdeaList} isShowModal={isShowModal} />
+            <Ideas cardIdeaList={cardIdeaList} />
           </>
         }
       ></Route>
@@ -60,7 +59,7 @@ function App() {
         element={
           <>
             <Header/>
-            <Promo isShowModal={isShowModal}/>
+            <Promo />
           </>
         }
       ></Route>

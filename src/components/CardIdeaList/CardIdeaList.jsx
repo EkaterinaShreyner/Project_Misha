@@ -4,40 +4,40 @@ import CardIdea from '../CardIdea/CardIdea';
 import { Link } from 'react-router-dom';
 import { Columns, Button } from "react-bulma-components";
 
-function CardIdeaList() {
+function CardIdeaList(props) {
   const [shownNewIdea, setShowNewIdea] = useState(false);
   const [showCards, setShowCards] = useState(3);
 
-  const bestIdeasList = [
-    {
-      id: 1,
-      title: "булочная1",
-      likes: 100,
-      chance: "100%",
-      dislikes: 1
-    },
-    {
-      id: 2,
-      title: "булочная2",
-      likes: 400,
-      chance: "40%",
-      dislikes: 40
-    },
-    {
-      id: 3,
-      title: "булочная3",
-      likes: 300,
-      chance: "30%",
-      dislikes: 30
-    },
-    {
-      id: 4,
-      title: "булочная4",
-      likes: 200,
-      chance: "14%",
-      dislikes: 10
-    },
-  ]
+  // const bestIdeasList = [
+  //   {
+  //     id: 1,
+  //     title: "булочная1",
+  //     likes: 100,
+  //     chance: "100%",
+  //     dislikes: 1
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "булочная2",
+  //     likes: 400,
+  //     chance: "40%",
+  //     dislikes: 40
+  //   },
+  //   {
+  //     id: 3,
+  //     title: "булочная3",
+  //     likes: 300,
+  //     chance: "30%",
+  //     dislikes: 30
+  //   },
+  //   {
+  //     id: 4,
+  //     title: "булочная4",
+  //     likes: 200,
+  //     chance: "14%",
+  //     dislikes: 10
+  //   },
+  // ]
    
   
   // const bestIdeas = props.cardIdeaList.map((data, index) => (
@@ -50,7 +50,8 @@ function CardIdeaList() {
   // ));
 
   const bestIdeas = 
-    bestIdeasList.slice(0, showCards).map((data, index) => (
+    // bestIdeasList.slice(0, showCards).map((data, index) => (
+    props.cardIdeaList.slice(0, showCards).map((data, index) => (
       <CardIdea
         key={index}
         title={data.title}
@@ -60,7 +61,8 @@ function CardIdeaList() {
       />
     ))
   const newIdeas = 
-    bestIdeasList.slice(0, showCards).map((data, index) => (
+    // bestIdeasList.slice(0, showCards).map((data, index) => (
+    props.cardIdeaList.slice(0, showCards).map((data, index) => (
       <CardIdea
         key={index}
         title={data.title}
@@ -93,7 +95,8 @@ function CardIdeaList() {
       </div>
         {shownNewIdea ? newIdeas : bestIdeas}
     </div>
-    {showCards !== bestIdeasList.length && renderButtonShowMore}
+    {/* {showCards !== bestIdeasList.length && renderButtonShowMore} */}
+    {showCards !== props.cardIdeaList.length && renderButtonShowMore}
   </>
   const renderDesktop =
     // <Columns>

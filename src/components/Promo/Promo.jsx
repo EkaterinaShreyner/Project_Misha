@@ -15,7 +15,7 @@ import './Promo.css'
 import FormIdea from "../FormIdea/FormIdea";
 import { Link } from "react-router-dom";
 
-function Promo(props) {
+function Promo() {
   const [emailValue, setEmailValue] = useState("");
   // const emailPlaceholder = emailValue === "" ? "" : "Напиши свою почту, а мы пришлем результаты обработки твоей идеи нашим ИИ:";
   const emailPlaceholder = "Напиши свою почту, а мы пришлем результаты обработки твоей идеи нашим ИИ:";
