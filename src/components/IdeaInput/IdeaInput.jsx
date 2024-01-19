@@ -10,11 +10,15 @@ import * as mainApi from "../../utils/MainApi";
 function IdeaInput(props) {
   const [value, setValue] = useState("");
   const [isShowModal, setShowModal] = useState(false)
+  const [chance, setChance] = useState(0);
 
   function handleCheckIdea(e) {
     e.preventDefault();
+    const randomNumber = Math.floor(Math.random() * 100) + 1;
+    setChance(randomNumber)
     mainApi.createNewCard({
-      title: value
+      title: value,
+      chance: randomNumber
     })
     setShowModal(true);
   }
@@ -33,7 +37,7 @@ function IdeaInput(props) {
             </Modal.Card.Title>
           </Modal.Card.Header> */}
           <Modal.Card.Body className="modal__content">
-            {RenderProgress(value)}
+            {RenderProgress(value, chance)}
           </Modal.Card.Body>
           {/* <Modal.Card.Footer 
             className="buttons"

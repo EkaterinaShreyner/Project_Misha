@@ -8,6 +8,7 @@ import iconFb from '../../images/brand-icon_facebook.svg'
 import iconVk from '../../images/brand-icon_vk.svg'
 import iconTg from '../../images/brand-icon_telegram.svg'
 import iconTw from '../../images/brand-icon_twitter.svg'
+import * as mainApi from "../../utils/MainApi";
 
 const SocialLink = ({ icon, label, onMouseEnter, onMouseLeave, showName }) => (
   <li className="chech__link-item" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} onClick={() => {}}>
@@ -18,9 +19,9 @@ const SocialLink = ({ icon, label, onMouseEnter, onMouseLeave, showName }) => (
   </li>
 )
 
-function RenderProgress(value) {
+function RenderProgress(value, chance) {
   const navigate = useNavigate();
-  const [chance, setChance] = useState(0);
+  // const [chance, setChance] = useState(0);
   const [showNames, setShowNames] = useState({
     fb: false,
     vk: false,
@@ -37,10 +38,10 @@ function RenderProgress(value) {
   };
 
 
-  useEffect(() => {
-    const randomNumber = Math.floor(Math.random() * 100) + 1;
-    setChance(randomNumber)
-  }, []);
+  // useEffect(() => {
+  //   const randomNumber = Math.floor(Math.random() * 100) + 1;
+  //   setChance(randomNumber)
+  // }, []);
 
   return (
       <div className="check">

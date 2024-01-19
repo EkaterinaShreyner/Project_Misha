@@ -87,7 +87,6 @@ function Promo() {
       crossedPrices={data.crossedPrice}
       actualPrices={data.actualPrice}
       ImageCards={isHiddenMobile() ? data.imageMobile : data.image }
-      // ImageCards={data.imageMobile}
     />
   ));
 

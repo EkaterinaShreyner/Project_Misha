@@ -1,32 +1,36 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import './Ideas.css';
 import CardIdeaList from '../CardIdeaList/CardIdeaList';
 import CardIdea from '../CardIdea/CardIdea';
 import { Link } from 'react-router-dom';
+import * as mainApi from "../../utils/MainApi";
 
-// const randomIndex = Math.floor(Math.random() * props.cardIdeaList.length);
-// const randomCard = props.cardIdeaList[randomIndex];
+
 
 function Ideas(props) {
+  const [randomCardIdea, setRandomCardIdea] = useState({});
 
   useEffect(() => {
+      mainApi.getCards()
+        .then((cards) => {
+          console.log(cards)
+          // props.setCardIdeaList(cards)
+          // console.log(props.cardIdeaList)
+          const randomIndex = Math.floor(Math.random() * cards.length);
+          const randomCard = cards[randomIndex];
+          console.log(randomIndex)
+          console.log(randomCard)
+          setRandomCardIdea(randomCard)
+          console.log(randomCard)
+        })
+        .catch((err) => console.log(err))
 
   }, [])
-const rrr =
-  props.cardIdeaList.map((data, index) => (
-    <CardIdea
-      key={index}
-      title={data.title}
-      likes={data.likes}
-      dislikes={data.dislikes}
-      chance={data.chance}
-    />
-  ))
 
   return (
     <div className="ideas">
-      <p className="ideas__title">{rrr.title}</p>
+      <p className="ideas__title">{randomCardIdea.title}</p>
       <div className="ideas__buttons">
         <button
           className="ideas__button_type ideas__button_type_like"

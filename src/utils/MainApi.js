@@ -15,14 +15,14 @@ export const getCards = () => {
 }
 
 // создать идею
-export const createNewCard = ({title}) => {
+export const createNewCard = ({title, chance}) => {
   return fetch(`${BASE_URL}`, {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({title})
+    body: JSON.stringify({title, chance})
   })
   .then((res) => res.ok ? res.json() : Promise.reject(res.status));
 }

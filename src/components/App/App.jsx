@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import "bulma/css/bulma.min.css";
 import "./App.css";
 import { Box } from "react-bulma-components";
@@ -13,17 +13,23 @@ import * as mainApi from "../../utils/MainApi";
 
 function App() {
   const [cardIdeaList, setCardIdeaList] = useState([]);
+  const location = useLocation()
+  const currentPath = location.pathname;
 
   useEffect(() => {
-    console.log('test')
-    mainApi.getCards()
+      mainApi.getCards()
       .then((cards) => {
-        console.log('test2')
         setCardIdeaList(cards)
         console.log(cardIdeaList)
       })
       .catch((err) => console.log(err))
   }, [])
+
+  useEffect(() => {
+    if (currentPath === "/") {
+      setCardIdeaList(cardIdeaList)
+    }
+  }, [currentPath])
 
   return (
     <Routes>
