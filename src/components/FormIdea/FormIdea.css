@@ -80,6 +80,7 @@
 @media screen and (max-width: 768px) {
   .main__form {
     flex-direction: column;
+    align-items: start
   }
 }
 
