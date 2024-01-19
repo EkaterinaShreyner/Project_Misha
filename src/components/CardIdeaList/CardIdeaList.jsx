@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './CardIdeaList.css';
 import CardIdea from '../CardIdea/CardIdea';
 import { Link } from 'react-router-dom';
 import { Columns, Button } from "react-bulma-components";
+import * as mainApi from "../../utils/MainApi";
 
 function CardIdeaList(props) {
   const [shownNewIdea, setShowNewIdea] = useState(false);
   const [showCards, setShowCards] = useState(3);
+  const [cardIdeaList, setCardIdeaList] = useState([]);
 
   // const bestIdeasList = [
   //   {
@@ -49,9 +51,17 @@ function CardIdeaList(props) {
   //   />
   // ));
 
+  useEffect(() => {
+    mainApi.getCards()
+    .then((cards) => {
+      setCardIdeaList(cards)
+      console.log(cardIdeaList)
+    })
+    .catch((err) => console.log(err))
+}, [])
+
   const bestIdeas = 
-    // bestIdeasList.slice(0, showCards).map((data, index) => (
-    props.cardIdeaList.slice(0, showCards).map((data, index) => (
+    cardIdeaList.slice(0, showCards).map((data, index) => (
       <CardIdea
         key={index}
         title={data.title}
@@ -61,8 +71,7 @@ function CardIdeaList(props) {
       />
     ))
   const newIdeas = 
-    // bestIdeasList.slice(0, showCards).map((data, index) => (
-    props.cardIdeaList.slice(0, showCards).map((data, index) => (
+    cardIdeaList.slice(0, showCards).map((data, index) => (
       <CardIdea
         key={index}
         title={data.title}
@@ -96,7 +105,7 @@ function CardIdeaList(props) {
         {shownNewIdea ? newIdeas : bestIdeas}
     </div>
     {/* {showCards !== bestIdeasList.length && renderButtonShowMore} */}
-    {showCards !== props.cardIdeaList.length && renderButtonShowMore}
+    {showCards !== cardIdeaList.length && renderButtonShowMore}
   </>
   const renderDesktop =
     // <Columns>

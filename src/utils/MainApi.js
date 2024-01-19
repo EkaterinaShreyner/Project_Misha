@@ -28,27 +28,25 @@ export const createNewCard = ({title, chance}) => {
 }
 
 // лайк
-export const likeCard = ({likes}) => {
-  return fetch(`${BASE_URL}/other-ideas`, {
+export const likeCard = (cardId) => {
+  return fetch(`${BASE_URL}/other-ideas/${cardId}/likes`, {
     method: 'PATCH',
     headers: {
       'Accept': 'application/json',
-      'Content-Type': 'application/json'
+      // 'Content-Type': 'application/json'
     },
-    body: JSON.stringify({likes})
   })
   .then((res) => res.ok ? res.json() : Promise.reject(res.status));
 }
 
 // дислайк
-export const dislikeCard = ({dislikes}) => {
-  return fetch(`${BASE_URL}/other-ideas`, {
+export const dislikeCard = (cardId) => {
+  return fetch(`${BASE_URL}/other-ideas/${cardId}/dislikes`, {
     method: 'PATCH',
     headers: {
       'Accept': 'application/json',
-      'Content-Type': 'application/json'
+      // 'Content-Type': 'application/json'
     },
-    body: JSON.stringify({dislikes})
   })
   .then((res) => res.ok ? res.json() : Promise.reject(res.status));
 }

@@ -10,23 +10,43 @@ import * as mainApi from "../../utils/MainApi";
 
 function Ideas(props) {
   const [randomCardIdea, setRandomCardIdea] = useState({});
+  const [cardList, setCardList] = useState([]);
+  const [like, setLike] = useState(false);
+  const [disLike, setDisLike] = useState(false);
 
   useEffect(() => {
       mainApi.getCards()
         .then((cards) => {
-          console.log(cards)
-          // props.setCardIdeaList(cards)
-          // console.log(props.cardIdeaList)
+          setCardList(cards)
           const randomIndex = Math.floor(Math.random() * cards.length);
           const randomCard = cards[randomIndex];
-          console.log(randomIndex)
-          console.log(randomCard)
           setRandomCardIdea(randomCard)
-          console.log(randomCard)
         })
         .catch((err) => console.log(err))
 
-  }, [])
+  }, [like, disLike])
+
+
+
+  function handleLike() {
+    mainApi.likeCard(randomCardIdea._id)
+      .then(() => {
+        setLike(!like)
+      })
+      .catch((err) => {
+        console.error(`Ошибка: ${err}`)
+      })
+  }
+
+  function handleDislike() {
+    mainApi.dislikeCard(randomCardIdea._id)
+      .then(() => {
+        setDisLike(!disLike)
+      })
+      .catch((err) => {
+        console.error(`Ошибка: ${err}`)
+      })
+  }
 
   return (
     <div className="ideas">
@@ -34,16 +54,16 @@ function Ideas(props) {
       <div className="ideas__buttons">
         <button
           className="ideas__button_type ideas__button_type_like"
-          onClick={() => console.log('like')}
+          onClick={handleLike}
         >  
         </button>
         <button
           className="ideas__button_type ideas__button_type_dislike"
-          onClick={() => console.log('dislike')}
+          onClick={handleDislike}
         >  
         </button>
       </div>
-      <CardIdeaList cardIdeaList={props.cardIdeaList}/>
+      <CardIdeaList cardIdeaList={cardList}/>
       <Link to="/" className="ideas__nav-back">Вернуться к началу</Link>
     </div>
   )

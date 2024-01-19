@@ -12,24 +12,24 @@ import Ideas from "../Ideas/Ideas";
 import * as mainApi from "../../utils/MainApi";
 
 function App() {
-  const [cardIdeaList, setCardIdeaList] = useState([]);
-  const location = useLocation()
-  const currentPath = location.pathname;
+  // const [cardIdeaList, setCardIdeaList] = useState([]);
+  // const location = useLocation()
+  // const currentPath = location.pathname;
 
-  useEffect(() => {
-      mainApi.getCards()
-      .then((cards) => {
-        setCardIdeaList(cards)
-        console.log(cardIdeaList)
-      })
-      .catch((err) => console.log(err))
-  }, [])
+  // useEffect(() => {
+  //     mainApi.getCards()
+  //     .then((cards) => {
+  //       setCardIdeaList(cards)
+  //       console.log(cardIdeaList)
+  //     })
+  //     .catch((err) => console.log(err))
+  // }, [])
 
-  useEffect(() => {
-    if (currentPath === "/") {
-      setCardIdeaList(cardIdeaList)
-    }
-  }, [currentPath])
+  // useEffect(() => {
+  //   if (currentPath === "/") {
+  //     setCardIdeaList(cardIdeaList)
+  //   }
+  // }, [currentPath])
 
   return (
     <Routes>
@@ -38,7 +38,7 @@ function App() {
         element={
           <>
             <Header/>
-            <Main cardIdeaList={cardIdeaList} />
+            <Main />
           </>
         }
       ></Route>
@@ -47,7 +47,7 @@ function App() {
         element={
           <>
             <Header/>
-            <Ideas cardIdeaList={cardIdeaList} />
+            <Ideas  />
           </>
         }
       ></Route>

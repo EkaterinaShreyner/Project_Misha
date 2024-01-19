@@ -31,7 +31,7 @@ function FormIdea(props) {
           placeholder={props.placeholder}
         />
         {invalidEmailOnPromoPage && 
-        <Form.Help color="danger" className="is-hidden-desktop">Невалидная почта</Form.Help>}
+        <Form.Help color="danger" className="is-hidden-tablet">Невалидная почта</Form.Help>}
         <Button
           className="main__button-submit"
           type="submit"
