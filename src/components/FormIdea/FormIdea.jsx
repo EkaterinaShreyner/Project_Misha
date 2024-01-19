@@ -7,6 +7,7 @@ function FormIdea(props) {
   const location = useLocation();
   const currentPath = location.pathname;
   const [isValidEmail, setIsValidEmail] = useState(true);
+  const invalidEmailOnPromoPage = (currentPath !== '/' && !isValidEmail)
 
   function onCheckIdea(e) {
     props.onCheckIdea(e)
@@ -24,23 +25,23 @@ function FormIdea(props) {
           onChange={onChangeInput}
           value={props.value}
           className="main__input"
-          style={!isValidEmail ? { borderBottomColor: 'red' } : {}}
+          style={invalidEmailOnPromoPage ? { borderBottomColor: 'red' } : {}}
           size={9}
           minLength={2}
           placeholder={props.placeholder}
         />
-        {(currentPath !== '/' && !isValidEmail) && 
+        {invalidEmailOnPromoPage && 
         <Form.Help color="danger" className="is-hidden-desktop">Невалидная почта</Form.Help>}
         <Button
           className="main__button-submit"
           type="submit"
-          disabled={props.value === "" || !isValidEmail ? true : false}
+          disabled={props.value === "" || invalidEmailOnPromoPage ? true : false}
           onClick={onCheckIdea}
         >
           {currentPath === '/'? "Оценить" : "Прислать"}
         </Button>
       </Form.Field>
-      {(currentPath !== '/' && !isValidEmail) && 
+      {invalidEmailOnPromoPage && 
         <Form.Help color="danger" className="is-hidden-mobile">Невалидная почта</Form.Help>}
     </form>
   )
