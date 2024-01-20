@@ -7,13 +7,15 @@
 .ideas__title {
   display: flex;
   justify-content: center;
+  align-items: center;
   font-family: Manrope;
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   margin: 0 auto;
-  width: 884px;
+  text-align: center;
+  max-width: 884px;
 }
 
 .ideas__buttons {
@@ -51,7 +53,7 @@
 
 .ideas__nav-back {
   display: none;
-  margin: 42px auto 0;
+  margin: 42px auto 36px;
   color: rgba(47, 47, 55, 0.35);
   font-size: 16px;
   font-style: normal;

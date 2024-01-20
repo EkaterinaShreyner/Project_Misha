@@ -15,18 +15,16 @@ function Ideas(props) {
   const [disLike, setDisLike] = useState(false);
 
   useEffect(() => {
-      mainApi.getCards()
-        .then((cards) => {
-          setCardList(cards)
-          const randomIndex = Math.floor(Math.random() * cards.length);
-          const randomCard = cards[randomIndex];
-          setRandomCardIdea(randomCard)
-        })
-        .catch((err) => console.log(err))
+    mainApi.getCards()
+      .then((cards) => {
+        setCardList(cards)
+        const randomIndex = Math.floor(Math.random() * cards.length);
+        const randomCard = cards[randomIndex];
+        setRandomCardIdea(randomCard)
+      })
+      .catch((err) => console.log(err))
 
-  }, [like, disLike])
-
-
+  }, [like, disLike, setLike, setDisLike])
 
   function handleLike() {
     mainApi.likeCard(randomCardIdea._id)
@@ -63,7 +61,8 @@ function Ideas(props) {
         >  
         </button>
       </div>
-      <CardIdeaList cardIdeaList={cardList}/>
+      {/* <CardIdeaList cardIdeaList={cardList}/> */}
+      <CardIdeaList />
       <Link to="/" className="ideas__nav-back">Вернуться к началу</Link>
     </div>
   )

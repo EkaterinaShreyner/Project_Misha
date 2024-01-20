@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import CardPromo from "../CardPromo/CardPromo";
 import Img1 from '../../images/pic1.svg'
@@ -17,10 +17,17 @@ import { Link } from "react-router-dom";
 
 function Promo() {
   const [emailValue, setEmailValue] = useState("");
+
+  // useEffect(() => {
+  //   href="#form"
+  // })
+
+  useEffect(() => window.scrollTo(0, 2000), []);
+
   // const emailPlaceholder = emailValue === "" ? "" : "Напиши свою почту, а мы пришлем результаты обработки твоей идеи нашим ИИ:";
   const emailPlaceholder = "Напиши свою почту, а мы пришлем результаты обработки твоей идеи нашим ИИ:";
   const isHiddenMobile = () => {
-    return window.innerWidth <= 1280;
+    return window.innerWidth <= 1439;
   }
   const promoData = [
     {
