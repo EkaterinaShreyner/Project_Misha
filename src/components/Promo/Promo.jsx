@@ -92,6 +92,14 @@ function Promo() {
 
   return (
     <div className="promo">
+      {/* <span className="promo__label">
+        {emailPlaceholder}
+      </span>
+      <FormIdea
+        value={emailValue}
+        // onCheckIdea={handleCheckIdea}
+        onChangeInput={(e) => setEmailValue(e.target.value)}
+      ></FormIdea> */}
       <p className="promo__title">
         Выбери промокод на какой из наших продуктов тебе прислать:
       </p>

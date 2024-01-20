@@ -14,8 +14,11 @@
 }
 
 .promo__cards-list {
-  display: flex;
-  flex-wrap: wrap;
+  /* display: flex; */
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  /* grid-template-columns: repeat(auto-fill, 236px); */
+  /* flex-wrap: wrap; */
   gap: 20px;
 }
 
@@ -25,11 +28,11 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  margin-top: 60px;
 }
 
 @media screen and (max-width: 768px) {
   .promo {
-    /* margin: 0 90px 56px; */
     margin: 0 20px 20px;
   }
 }
@@ -40,8 +43,8 @@
   }
 }
 
-@media screen and (max-width: 820px) {
+@media screen and (max-width: 1439px) {
   .promo__cards-list {
-    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
   }
 }

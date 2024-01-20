@@ -8,8 +8,9 @@
   background: #DCE0EC;
   height: 187px;
   width: max-content;
+  width: 100%;
   /* width: calc(100%/2); */
-  width: 618px;
+  /* width: 618px; */
 }
 
 .card-idea__title {
@@ -66,9 +67,9 @@
   }
 }
 
-@media screen and (max-width: 635px) {
+/* @media screen and (max-width: 635px) {
   .card-idea {
     width: 353px;
     height: 331px;
   }
-}
+} */
