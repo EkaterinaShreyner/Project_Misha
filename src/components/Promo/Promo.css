@@ -14,11 +14,9 @@
 }
 
 .promo__cards-list {
-  /* display: flex; */
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   /* grid-template-columns: repeat(auto-fill, 236px); */
-  /* flex-wrap: wrap; */
   gap: 20px;
 }
 

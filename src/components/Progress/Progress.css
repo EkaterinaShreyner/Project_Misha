@@ -87,6 +87,8 @@
   font-weight: 400;
   line-height: normal;
   opacity: 1;
+  padding: 0;
+  height: 56px;
 }
 
 .check__button-know:hover {
@@ -146,9 +148,6 @@
 
 .check__link-title:hover {
   opacity: 1;
-  /* font-size: 15px;
-  display: flex;
-  color:  #F7F7F8; */
 }
 
 @keyframes move {
@@ -200,6 +199,26 @@
 
 @media screen and (max-width: 768px) {
   .noLeftBottomRadius {
-    padding: 42px 32px 40px;
+    padding: 42px 20px 40px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .check__description {
+    font-size: 32px;
+    margin-bottom: 48px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .check__know {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .check__button-know {
+    font-size: 16px;
+    height: 48px;
   }
 }

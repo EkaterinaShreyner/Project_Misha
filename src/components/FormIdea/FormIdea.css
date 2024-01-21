@@ -1,7 +1,6 @@
 .main__form {
   display: flex;
   gap: 20px;
-  /* margin-bottom: 128px; */
   align-items: end;
 }
 

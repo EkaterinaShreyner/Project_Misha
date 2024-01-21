@@ -20,7 +20,7 @@ function FormIdea(props) {
 
   return (
     <form>
-      <Form.Field kind="addons" align="end" className="main__form" id="form">
+      <Form.Field kind="addons" align="end" className="main__form">
         <Form.Input
           onChange={onChangeInput}
           value={props.value}

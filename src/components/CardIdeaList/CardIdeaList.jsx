@@ -41,7 +41,6 @@ function CardIdeaList(props) {
 
   const renderButtonShowMore = 
     <Button 
-      // backgroundColor='black'
       textColor='white'
       style={{borderRadius:'12px 0px 12px 12px', marginTop: '40px', height: '56px', background: '#2F2F37', width: '-webkit-fill-available'}}
       onClick={() => setShowCards(prevValue => prevValue + 2)}

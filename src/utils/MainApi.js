@@ -8,7 +8,6 @@ export const getCards = () => {
     method: 'GET',
     headers: {
       "Content-Type": "application/json",
-      // authorization : `Bearer ${token}`,
     }
   })
   .then((res) => res.ok ? res.json() : Promise.reject(res.status));

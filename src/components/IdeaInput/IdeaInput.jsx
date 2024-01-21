@@ -7,7 +7,7 @@ import FormIdea from "../FormIdea/FormIdea";
 import * as mainApi from "../../utils/MainApi";
 
 
-function IdeaInput(props) {
+function IdeaInput() {
   const [value, setValue] = useState("");
   const [isShowModal, setShowModal] = useState(false)
   const [chance, setChance] = useState(0);

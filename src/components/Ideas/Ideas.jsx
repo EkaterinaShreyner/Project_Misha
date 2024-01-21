@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 
 import './Ideas.css';
 import CardIdeaList from '../CardIdeaList/CardIdeaList';
-import CardIdea from '../CardIdea/CardIdea';
 import { Link } from 'react-router-dom';
 import * as mainApi from "../../utils/MainApi";
 
@@ -10,14 +9,14 @@ import * as mainApi from "../../utils/MainApi";
 
 function Ideas(props) {
   const [randomCardIdea, setRandomCardIdea] = useState({});
-  const [cardList, setCardList] = useState([]);
+  // const [cardList, setCardList] = useState([]);
   const [like, setLike] = useState(false);
   const [disLike, setDisLike] = useState(false);
 
   useEffect(() => {
     mainApi.getCards()
       .then((cards) => {
-        setCardList(cards)
+        // setCardList(cards)
         const randomIndex = Math.floor(Math.random() * cards.length);
         const randomCard = cards[randomIndex];
         setRandomCardIdea(randomCard)
