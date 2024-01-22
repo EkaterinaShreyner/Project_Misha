@@ -44,10 +44,10 @@
 }
 
 .check__image {
-  background: url(../../images/smile2.png);
+  background: url(../../images/smile2.png) no-repeat center;
   margin: 0 auto 27px;
-  width: 60px;
-  height: 60px;
+  width: 63px;
+  height: 63px;
 }
 
 .check__description {
@@ -199,6 +199,13 @@
     padding: 0 10px;
   }
 }
+
+/* @media screen and (max-width: 768px) {
+  .check__image {
+    width: 50px;
+    height: 50px;
+  }
+} */
 
 @media screen and (max-width: 768px) {
   .noLeftBottomRadius {

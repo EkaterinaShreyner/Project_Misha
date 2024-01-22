@@ -26,7 +26,7 @@ function Promo() {
     }, 300);
     setTimeout(() => {
       setShowModalConfirm(false)
-    }, 1500);
+    }, 2000);
   };
 
 
@@ -66,7 +66,7 @@ function Promo() {
         ></FormIdea>
         <Link to="/" className="ideas__nav-back">Вернуться к началу</Link>
       </div>
-      {showModalConfirm && <ModalConfirm modal={showModalConfirm}/>}
+      {showModalConfirm && <ModalConfirm modal={showModalConfirm} closeModal={() => setShowModalConfirm(false)}/>}
     </>
   );
 }

@@ -12,8 +12,7 @@ function IdeaInput() {
   const [isShowModal, setShowModal] = useState(false)
   const [chance, setChance] = useState(0);
 
-  function handleCheckIdea(e) {
-    e.preventDefault();
+  function handleCheckIdea() {
     const randomNumber = Math.floor(Math.random() * 100) + 1;
     setChance(randomNumber)
     // mainApi.createNewCard({
@@ -52,9 +51,10 @@ function IdeaInput() {
     <div>
       <RenderModalProgress/>
       <FormIdea
+        modal={handleCheckIdea}
         placeholder="Опиши свою идею"
         value={value}
-        onCheckIdea={handleCheckIdea}
+        // onCheckIdea={handleCheckIdea}
         onChangeInput={(e) => setValue(e.target.value)}
       ></FormIdea>
     </div>

@@ -27,7 +27,8 @@ function RenderProgress(value, chance) {
     tw: false,
   });
 
-  // useEffect(() => window.scrollTo(0, 2000), []);
+  // useEffect(() => {
+  //   setTimeout(window.scrollTo(0, 2000))}, [chance]);
 
   const handleMouseEnter = (socialMedia) => {
     setShowNames((prevShowNames) => ({ ...prevShowNames, [socialMedia]: true }));

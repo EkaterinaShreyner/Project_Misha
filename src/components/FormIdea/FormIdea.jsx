@@ -11,9 +11,10 @@ function FormIdea(props) {
 
   function onCheckIdea(e) {
     e.preventDefault();
-    props.modal(true)
-   
+    // props.onCheckIdea();
+    props.modal(true);
   }
+
   function onChangeInput(e) {
     props.onChangeInput(e)
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
