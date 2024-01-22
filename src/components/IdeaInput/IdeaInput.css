@@ -12,3 +12,10 @@
 .modal__content {
   background: 0;
 }
+
+@media screen and (max-width: 900px) {
+  .modal__content {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}

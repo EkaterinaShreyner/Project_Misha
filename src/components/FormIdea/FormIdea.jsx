@@ -10,7 +10,9 @@ function FormIdea(props) {
   const invalidEmailOnPromoPage = (currentPath !== '/' && !isValidEmail)
 
   function onCheckIdea(e) {
-    props.onCheckIdea(e)
+    e.preventDefault();
+    props.modal(true)
+   
   }
   function onChangeInput(e) {
     props.onChangeInput(e)

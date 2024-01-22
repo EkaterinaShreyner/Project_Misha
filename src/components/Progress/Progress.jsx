@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import './Progress.css'
 import { Columns, Card, Button } from "react-bulma-components";
 import ProgressBar from "../ProgressBar/ProgressBar";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import iconFb from '../../images/brand-icon_facebook.svg'
 import iconVk from '../../images/brand-icon_vk.svg'
 import iconTg from '../../images/brand-icon_telegram.svg'
@@ -11,13 +11,13 @@ import iconTw from '../../images/brand-icon_twitter.svg'
 
 const SocialLink = ({ icon, label, onMouseEnter, onMouseLeave, showName }) => (
   <li className="chech__link-item" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} onClick={() => {}}>
-    <a href="#" className="chech__link">
+    <button className="chech__link">
       <img className="check__link-icon" src={icon} alt={`icon ${label}`} />
       {showName && <span style={{ color: 'white' }}>{label}</span>}
-    </a>
+    </button>
+
   </li>
 )
-
 function RenderProgress(value, chance) {
   const navigate = useNavigate();
   const [showNames, setShowNames] = useState({

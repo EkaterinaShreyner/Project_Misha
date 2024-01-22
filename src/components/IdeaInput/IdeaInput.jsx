@@ -16,10 +16,10 @@ function IdeaInput() {
     e.preventDefault();
     const randomNumber = Math.floor(Math.random() * 100) + 1;
     setChance(randomNumber)
-    mainApi.createNewCard({
-      title: value,
-      chance: randomNumber
-    })
+    // mainApi.createNewCard({
+    //   title: value,
+    //   chance: randomNumber
+    // })
     setShowModal(true);
   }
 

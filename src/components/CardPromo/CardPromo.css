@@ -4,7 +4,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 58px;
+  /* margin-bottom: 58px; */
 }
 
   .card-promo {
@@ -148,5 +148,34 @@
 @media screen and (max-width: 1439px) {
   .card-promo__price-actual {
     font-size: 36px;
+  }
+}
+
+@media screen and (max-width: 1439px) {
+  .card-promo-container {
+    margin-bottom: 25px;
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .card-promo-container {
+    margin-bottom: 0;
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .card-promo__option {
+    position: absolute;
+    top: 20px;
+    right: 16px;
+    z-index: 10;
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .card-promo__option_active {
+   animation: none;
+   width: 24px;
   }
 }

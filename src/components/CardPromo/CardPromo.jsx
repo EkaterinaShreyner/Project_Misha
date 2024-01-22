@@ -10,8 +10,10 @@ function CardPromo({id, textStart, textBold, textFor, textEnd, crossedPrices, ac
     setCheckMark(!checkmark); 
     setChoosePromoId(id)} 
 
+
+
   return (
-    <div className="card-promo-container" onClick={handleClickPromo}>
+    <div className="card-promo-container" onClick={handleClickPromo} id={id}>
       <div className="card-promo">
         <div className="card-promo__title">
           <p className="card-promo__title-normal">
@@ -32,6 +34,7 @@ function CardPromo({id, textStart, textBold, textFor, textEnd, crossedPrices, ac
         <img className="card-promo__image" src={ImageCards} alt="картинка"/>
       </div>
       <div className={`card-promo__option ${checkmark? "card-promo__option_active" : ""}`}></div>
+      {/* <div className="card-promo__option card-promo__option_active"></div> */}
     </div>
   );
 }

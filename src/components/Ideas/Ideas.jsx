@@ -4,6 +4,7 @@ import './Ideas.css';
 import CardIdeaList from '../CardIdeaList/CardIdeaList';
 import { Link } from 'react-router-dom';
 import * as mainApi from "../../utils/MainApi";
+import { cardIdeaData } from '../../utils/constants';
 
 
 
@@ -14,15 +15,18 @@ function Ideas(props) {
   const [disLike, setDisLike] = useState(false);
 
   useEffect(() => {
-    mainApi.getCards()
-      .then((cards) => {
-        // setCardList(cards)
-        const randomIndex = Math.floor(Math.random() * cards.length);
-        const randomCard = cards[randomIndex];
-        setRandomCardIdea(randomCard)
-      })
-      .catch((err) => console.log(err))
+    // mainApi.getCards()
+    //   .then((cards) => {
+    //     // setCardList(cards)
+    //     const randomIndex = Math.floor(Math.random() * cards.length);
+    //     const randomCard = cards[randomIndex];
+    //     setRandomCardIdea(randomCard)
+    //   })
+    //   .catch((err) => console.log(err))
 
+      const randomIndex = Math.floor(Math.random() * cardIdeaData.length);
+      const randomCard = cardIdeaData[randomIndex];   
+      setRandomCardIdea(randomCard) 
   }, [like, disLike, setLike, setDisLike])
 
   function handleLike() {

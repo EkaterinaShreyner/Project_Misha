@@ -22,7 +22,7 @@
 
 .promo__label {
   color: #2F2F37;
-  font-size: 14px;
+  font-size: 15px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -44,5 +44,11 @@
 @media screen and (max-width: 1439px) {
   .promo__cards-list {
     grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  }
+}
+
+@media screen and (max-width: 1439px) {
+  .promo__label {
+    font-size: 14px;
   }
 }

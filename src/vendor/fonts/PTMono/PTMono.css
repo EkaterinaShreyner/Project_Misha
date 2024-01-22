@@ -1,17 +1,10 @@
 @font-face {
-  font-family: "PT Mono", "Arial", sans-serif;;
+  /* font-family: "PT Mono", "Arial", sans-serif; */
+  font-family: "PT Mono";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
   src: url(./PTMono-Regular.woff2) format("woff2"),
-    url(./PTMono-Regular.woff) format("woff");
+    url(./PTMono-Regular.woff) format("woff"),
+    url(./PTMono-Regular.ttf) format("truetype");
 }
-
-/* @font-face {
-  font-family: "PT Mono", "Arial", sans-serif;;
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url(./Manrope-Medium.woff2) format("woff2"),
-    url(./Manrope-Medium.woff) format("woff");
-} */

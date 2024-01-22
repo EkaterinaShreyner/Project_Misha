@@ -61,3 +61,36 @@ export const promoData = [
     imageMobile: ImgMobile2,
   },
 ];
+
+export const cardIdeaData = [
+  {
+    title: "салон красоты",
+    likes: 13,
+    dislikes: 7,
+    chance: 76
+  },
+  {
+    title: "кафе",
+    likes: 13,
+    dislikes: 7,
+    chance: 69
+  },
+  {
+    title: "автомойка",
+    likes: 13,
+    dislikes: 7,
+    chance: 98
+  },
+  {
+    title: "магазин",
+    likes: 13,
+    dislikes: 7,
+    chance: 43
+  },
+  {
+    title: "Салон красоты, Салон красоты, Салон красоты, Салон красоты, Салон красоты, Салон красоты, Салон красоты, Салон красоты, Салон красоты, Салон красоты, Салон красоты, Салон красоты, Салон красоты, ",
+    likes: 13,
+    dislikes: 7,
+    chance: 29
+  },
+]
