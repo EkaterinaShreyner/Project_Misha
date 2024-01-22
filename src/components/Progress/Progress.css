@@ -11,10 +11,10 @@
 }
 
 .check__idea {
-  width: 811px;
-  color: rgba(47, 47, 55, 0.35);
+  max-width: 811px;
+  color: rgba(47, 47, 55, 0.75);
   font-family: Manrope;
-  font-size: 20px;
+  font-size: 22px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -174,7 +174,8 @@
 @media screen and (max-width: 768px) {
   .check__idea {
     font-size: 16px;
-    margin-bottom: 150px;
+    /* margin-bottom: 150px; */
+    margin-bottom: 90px;
   }
 }
 

@@ -13,7 +13,7 @@ function IdeaInput() {
   const [chance, setChance] = useState(0);
 
   function handleCheckIdea() {
-    const randomNumber = Math.floor(Math.random() * 100) + 1;
+    const randomNumber = Math.floor(Math.random() * 90) + 5;
     setChance(randomNumber)
     // mainApi.createNewCard({
     //   title: value,
