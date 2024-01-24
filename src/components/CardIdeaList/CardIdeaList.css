@@ -29,11 +29,24 @@
   color: #2F2F37;
   margin-top: 40px;
   background: transparent;
+  position: relative;
+}
+
+.card-idea__list-img {
+  position: absolute;
+  /* left: 1px; */
+  bottom: -5px;
 }
 
 @media screen and (max-width: 768px) {
   .card-idea__list {
     grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card-idea__list-img {
+    display: none;
   }
 }
 

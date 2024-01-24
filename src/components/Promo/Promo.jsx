@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import CardPromo from "../CardPromo/CardPromo";
-import { promoData } from "../../utils/constants";
+import { promoData } from "../../utils/constants"; 
+import lightning from "../../images/lightning.svg";
+import vector from "../../images/Vector724.svg";
 
 import './Promo.css'
 import FormIdea from "../FormIdea/FormIdea";
@@ -49,9 +51,14 @@ function Promo() {
     <>
       <div className="promo">
         <p className="promo__title">
-          Выбери промокод на какой из наших продуктов тебе прислать:
+          Чтобы идея стала реальностью, воспользуйся нашими сервисами с ИИ
+          <img className="promo__image-lightning" src={lightning} alt="молния" />
         </p>
-
+        <p className="promo__subtitle">И выбери один, который хочешь больше всего</p>
+        <button onClick={() => window.scrollTo(0, 2000)} className="promo__button-scroll">
+          Скролль ниже
+          <img className="promo__image-vector" src={vector} alt="стреочка внизу" />
+        </button>
         <div className="promo__cards-list">
           {renderedCards}
         </div>

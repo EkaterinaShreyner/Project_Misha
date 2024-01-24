@@ -3,6 +3,7 @@ import './CardIdeaList.css';
 import CardIdea from '../CardIdea/CardIdea';
 import { Button } from "react-bulma-components";
 import { cardIdeaData } from '../../utils/constants';
+import circul from '../../images/circul.svg';
 import * as mainApi from "../../utils/MainApi";
 
 function CardIdeaList(props) {
@@ -48,6 +49,7 @@ function CardIdeaList(props) {
       onClick={() => setShowCards(prevValue => prevValue + 2)}
       > 
       Смотреть еще
+      <img src={circul} className="card-idea__list-img" alt="смотреть еще" />
     </Button>
     
   return (

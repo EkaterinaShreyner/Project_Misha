@@ -82,9 +82,9 @@ function RenderProgress(value, chance) {
           <Columns.Column>
             <Card className="card noLeftBottomRadius">
               <div className="check__image"></div>
-              <p className="check__description">
+              {/* <p className="check__description">
                 Но вообще-то вряд ли получится потому что…
-              </p>
+              </p> */}
               <p className="check__know">
                 Узнать наиболее вероятные проблемы, которые у тебя возникнут по мнению нашего ИИ
               </p>

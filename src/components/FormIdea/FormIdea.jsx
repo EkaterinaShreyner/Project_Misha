@@ -2,12 +2,23 @@ import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import './FormIdea.css';
 import { Button, Form } from "react-bulma-components";
+import icon from "../../images/icon-question.svg";
+import Tooltip from '../Tooltip/Tooltip';
 
 function FormIdea(props) {
   const location = useLocation();
   const currentPath = location.pathname;
   const [isValidEmail, setIsValidEmail] = useState(true);
-  const invalidEmailOnPromoPage = (currentPath !== '/' && !isValidEmail)
+  const [showToolTip, setShowToolTip] = useState(false);
+
+  const invalidEmailOnPromoPage = (currentPath !== '/' && !isValidEmail);
+
+  const onMouseEnterHandler = () => {
+    setShowToolTip(true);
+  };
+  const onMouseLeaveHandler = () => {
+    setShowToolTip(false);
+  };
 
   function onCheckIdea(e) {
     e.preventDefault();
@@ -21,6 +32,19 @@ function FormIdea(props) {
     setIsValidEmail(emailRegex.test(props.value));
   }
 
+  // const tooltip = showToolTip && 
+  //   <div
+  //   className="main__question"
+  //   onMouseEnter={onMouseEnterHandler}
+  //   onMouseLeave={onMouseLeaveHandler}
+  // >
+  //   Что это?
+  //   <img
+  //     className="main__icon"
+  //     src={icon}
+  //     alt="подсказка"/>
+  // </div>
+  
   return (
     <form>
       <Form.Field kind="addons" align="end" className="main__form">
@@ -42,6 +66,22 @@ function FormIdea(props) {
           onClick={onCheckIdea}
         >
           {currentPath === '/'? "Оценить" : "Прислать"}
+          {currentPath === "/" &&
+            <div
+              className="main__question"
+              onMouseEnter={onMouseEnterHandler}
+              onMouseLeave={onMouseLeaveHandler}
+            >
+              &nbsp;&nbsp;Что это?
+              <img
+                className="main__icon"
+                src={icon}
+                alt="подсказка"/>
+              {showToolTip && <Tooltip></Tooltip>}
+            </div>
+            
+          }
+          
         </Button>
       </Form.Field>
       {invalidEmailOnPromoPage && 

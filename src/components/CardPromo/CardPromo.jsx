@@ -28,7 +28,7 @@ function CardPromo({id, textStart, textBold, textFor, textEnd, crossedPrices, ac
               {crossedPrices}
             </s>
             <span className="card-promo__price-actual">
-              {actualPrices}
+              {actualPrices}&#8381;
             </span>
           </div>
         <img className="card-promo__image" src={ImageCards} alt="картинка"/>
