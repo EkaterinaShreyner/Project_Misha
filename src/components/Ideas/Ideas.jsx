@@ -15,44 +15,44 @@ function Ideas(props) {
   const [disLike, setDisLike] = useState(false);
 
   useEffect(() => {
-    // mainApi.getCards()
-    //   .then((cards) => {
-    //     // setCardList(cards)
-    //     const randomIndex = Math.floor(Math.random() * cards.length);
-    //     const randomCard = cards[randomIndex];
-    //     setRandomCardIdea(randomCard)
-    //   })
-    //   .catch((err) => console.log(err))
+    mainApi.getCards()
+      .then((cards) => {
+        // setCardList(cards)
+        const randomIndex = Math.floor(Math.random() * cards.length);
+        const randomCard = cards[randomIndex];
+        setRandomCardIdea(randomCard)
+      })
+      .catch((err) => console.log(err))
 
-      const randomIndex = Math.floor(Math.random() * cardIdeaData.length);
-      const randomCard = cardIdeaData[randomIndex];   
-      setRandomCardIdea(randomCard) 
+      // const randomIndex = Math.floor(Math.random() * cardIdeaData.length);
+      // const randomCard = cardIdeaData[randomIndex];   
+      // setRandomCardIdea(randomCard) 
   }, [like, disLike, setLike, setDisLike])
 
   function handleLike() {
-    const randomIndex = Math.floor(Math.random() * cardIdeaData.length);
-      const randomCard = cardIdeaData[randomIndex];   
-      setRandomCardIdea(randomCard) 
-    // mainApi.likeCard(randomCardIdea._id)
-    //   .then(() => {
-    //     setLike(!like)
-    //   })
-    //   .catch((err) => {
-    //     console.error(`Ошибка: ${err}`)
-    //   })
+    // const randomIndex = Math.floor(Math.random() * cardIdeaData.length);
+    //   const randomCard = cardIdeaData[randomIndex];   
+    //   setRandomCardIdea(randomCard) 
+    mainApi.likeCard(randomCardIdea._id)
+      .then(() => {
+        setLike(!like)
+      })
+      .catch((err) => {
+        console.error(`Ошибка: ${err}`)
+      })
   }
 
   function handleDislike() {
-    const randomIndex = Math.floor(Math.random() * cardIdeaData.length);
-      const randomCard = cardIdeaData[randomIndex];   
-      setRandomCardIdea(randomCard) 
-    // mainApi.dislikeCard(randomCardIdea._id)
-    //   .then(() => {
-    //     setDisLike(!disLike)
-    //   })
-    //   .catch((err) => {
-    //     console.error(`Ошибка: ${err}`)
-    //   })
+    // const randomIndex = Math.floor(Math.random() * cardIdeaData.length);
+    //   const randomCard = cardIdeaData[randomIndex];   
+    //   setRandomCardIdea(randomCard) 
+    mainApi.dislikeCard(randomCardIdea._id)
+      .then(() => {
+        setDisLike(!disLike)
+      })
+      .catch((err) => {
+        console.error(`Ошибка: ${err}`)
+      })
   }
 
   return (

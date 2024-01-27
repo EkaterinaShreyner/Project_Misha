@@ -15,10 +15,10 @@ function IdeaInput() {
   function handleCheckIdea() {
     const randomNumber = Math.floor(Math.random() * 90) + 5;
     setChance(randomNumber)
-    // mainApi.createNewCard({
-    //   title: value,
-    //   chance: randomNumber
-    // })
+    mainApi.createNewCard({
+      title: value,
+      chance: randomNumber
+    })
     setShowModal(true);
   }
 

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './CardIdeaList.css';
 import CardIdea from '../CardIdea/CardIdea';
 import { Button } from "react-bulma-components";
-import { cardIdeaData } from '../../utils/constants';
+// import { cardIdeaData } from '../../utils/constants';
 import circul from '../../images/circul.svg';
 import * as mainApi from "../../utils/MainApi";
 
@@ -11,18 +11,18 @@ function CardIdeaList(props) {
   const [showCards, setShowCards] = useState(4);
   const [cardIdeaList, setCardIdeaList] = useState([]);
 
-//   useEffect(() => {
-//     mainApi.getCards()
-//       .then((cards) => {
-//         setCardIdeaList(cards)
-//       })
-//       .catch((err) => console.log(err))
+  useEffect(() => {
+    mainApi.getCards()
+      .then((cards) => {
+        setCardIdeaList(cards)
+      })
+      .catch((err) => console.log(err))
 
-// }, [])
+}, [])
 
   const bestIdeas = 
-    // cardIdeaList.slice(0, showCards).map((data, index) => (
-    cardIdeaData.slice(0, showCards).map((data, index) => (
+    cardIdeaList.slice(0, showCards).map((data, index) => (
+    // cardIdeaData.slice(0, showCards).map((data, index) => (
       <CardIdea
         key={index}
         title={data.title}
@@ -32,8 +32,8 @@ function CardIdeaList(props) {
       />
     ))
   const newIdeas = 
-    // cardIdeaList.slice(0, showCards).map((data, index) => (
-    cardIdeaData.slice(0, showCards).map((data, index) => (
+    cardIdeaList.slice(0, showCards).map((data, index) => (
+    // cardIdeaData.slice(0, showCards).map((data, index) => (
       <CardIdea
         key={index}
         title={data.title}
@@ -51,7 +51,6 @@ function CardIdeaList(props) {
       Смотреть еще
       <img src={circul} className="card-idea__list-img" alt="смотреть еще" />
     </Button>
-    
   return (
     <>
       <div className="card-idea__list-container">
@@ -63,8 +62,7 @@ function CardIdeaList(props) {
           {shownNewIdea ? newIdeas : bestIdeas}
         </div>
       </div>
-        {/* {showCards < cardIdeaList.length && renderButtonShowMore} */}
-        {showCards < cardIdeaData.length && renderButtonShowMore}
+        {showCards < cardIdeaList.length && renderButtonShowMore}
     </>
   )
 }
